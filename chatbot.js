@@ -435,7 +435,7 @@
         border: none;
         outline: none;
         font-family: var(--cb-font-body);
-        font-size: 0.9rem;
+        font-size: 16px; /* Must be 16px to prevent iOS auto-zoom on focus */
         color: var(--cb-cream);
         padding: 8px 0;
       }
@@ -893,6 +893,7 @@
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let botMessage = '';
+        let buffer = ''; // Buffer for incomplete chunks
 
         this.hideTyping();
 
@@ -910,29 +911,55 @@
           const { done, value } = await reader.read();
           if (done) break;
 
-          const chunk = decoder.decode(value);
-          const lines = chunk.split('\n');
+          // Append new chunk to buffer
+          buffer += decoder.decode(value, { stream: true });
+
+          // Process complete lines from buffer
+          const lines = buffer.split('\n');
+          // Keep the last potentially incomplete line in buffer
+          buffer = lines.pop() || '';
 
           for (const line of lines) {
-            if (line.startsWith('data: ')) {
-              const data = line.slice(6);
-              if (data === '[DONE]') continue;
+            const trimmedLine = line.trim();
+            if (!trimmedLine || !trimmedLine.startsWith('data: ')) continue;
 
-              try {
-                const parsed = JSON.parse(data);
-                const content = parsed.choices?.[0]?.delta?.content;
-                if (content) {
-                  botMessage += content;
-                  // Format and display
-                  let formattedText = botMessage
-                    .replace(/\n/g, '<br>')
-                    .replace(/(\/[a-zA-Z0-9-]+\.html)/g, '<a href="$1" target="_blank">$1</a>');
-                  contentEl.innerHTML = formattedText;
-                  this.scrollToBottom();
-                }
-              } catch (e) {
-                // Skip invalid JSON
+            const data = trimmedLine.slice(6);
+            if (data === '[DONE]') continue;
+
+            try {
+              const parsed = JSON.parse(data);
+              const content = parsed.choices?.[0]?.delta?.content;
+              if (content) {
+                botMessage += content;
+                // Format and display
+                let formattedText = botMessage
+                  .replace(/\n/g, '<br>')
+                  .replace(/(\/[a-zA-Z0-9-]+\.html)/g, '<a href="$1" target="_blank">$1</a>');
+                contentEl.innerHTML = formattedText;
+                this.scrollToBottom();
               }
+            } catch (e) {
+              // Skip invalid JSON (incomplete chunks)
+            }
+          }
+        }
+
+        // Process any remaining data in buffer
+        if (buffer.trim() && buffer.trim().startsWith('data: ')) {
+          const data = buffer.trim().slice(6);
+          if (data !== '[DONE]') {
+            try {
+              const parsed = JSON.parse(data);
+              const content = parsed.choices?.[0]?.delta?.content;
+              if (content) {
+                botMessage += content;
+                let formattedText = botMessage
+                  .replace(/\n/g, '<br>')
+                  .replace(/(\/[a-zA-Z0-9-]+\.html)/g, '<a href="$1" target="_blank">$1</a>');
+                contentEl.innerHTML = formattedText;
+              }
+            } catch (e) {
+              // Skip invalid JSON
             }
           }
         }

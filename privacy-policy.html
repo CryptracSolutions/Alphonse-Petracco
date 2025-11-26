@@ -106,6 +106,7 @@
         @media (min-width: 769px) {
             .nav-dropdown { position: relative; }
             .nav-dropdown-trigger { gap: 0.35rem; }
+            .nav-dropdown-trigger::after { left: 0.75rem; right: auto; width: calc(100% - 1.5rem - 12px - 0.35rem); }
             .nav-dropdown-trigger .dropdown-arrow { width: 12px; height: 12px; fill: currentColor; transition: transform 0.3s var(--ease-out-quart); flex-shrink: 0; }
             .nav-dropdown:hover .dropdown-arrow, .nav-dropdown.active .dropdown-arrow { transform: rotate(180deg); }
             .nav-dropdown-menu { position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(-10px); min-width: 220px; background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.98)); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 8px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, transform 0.3s var(--ease-out-quart), visibility 0.3s; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 1000; }
