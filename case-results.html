@@ -294,7 +294,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: var(--cream);
+            background: var(--gold);
             transition: all 0.15s ease;
             transform-origin: center;
         }
@@ -304,23 +304,23 @@
         .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
         /* Mobile Menu Overlay */
-        .mobile-menu-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 999; opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+        .mobile-menu-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 999; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
         .mobile-menu-backdrop.active { opacity: 1; visibility: visible; }
-        .mobile-menu { position: fixed; top: 0; left: 0; right: 0; height: 100vh; height: 100dvh; background: linear-gradient(180deg, rgba(10, 10, 10, 0.99) 0%, rgba(10, 10, 10, 0.97) 100%); background-color: rgba(10, 10, 10, 0.99); z-index: 1000; transform: translateY(-100%); transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; overflow: hidden; }
+        .mobile-menu { position: fixed; top: 0; left: 0; right: 0; height: 100vh; height: 100dvh; background: linear-gradient(180deg, rgba(10, 10, 10, 0.99) 0%, rgba(10, 10, 10, 0.97) 100%); background-color: rgba(10, 10, 10, 0.99); z-index: 1000; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; overflow: hidden; }
         .mobile-menu::before { content: ''; position: absolute; inset: 0; background: rgba(212, 175, 55, 0.02); pointer-events: none; }
         .mobile-menu.active { transform: translateY(0); }
         .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem var(--container-padding); border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
-        .mobile-menu-logo { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; }
-        .mobile-menu-logo-icon { width: 36px; height: 36px; color: var(--gold); }
-        .mobile-menu-logo-icon svg { width: 100%; height: 100%; }
+        .mobile-menu-logo { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; }
+        .mobile-menu-logo-icon { width: 42px; height: 42px; color: var(--gold); }
+        .mobile-menu-logo-icon svg { width: 42px; height: 42px; }
         .mobile-menu-logo span { background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-deep) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .mobile-menu-close { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--cream); cursor: pointer; transition: all 0.2s ease; }
-        .mobile-menu-close:hover { background: rgba(212, 175, 55, 0.1); border-color: rgba(212, 175, 55, 0.3); }
-        .mobile-menu-close svg { width: 20px; height: 20px; fill: currentColor; }
+        .mobile-menu-close { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; color: var(--gold); cursor: pointer; transition: opacity 0.2s ease; }
+        .mobile-menu-close:hover { opacity: 0.7; }
+        .mobile-menu-close svg { width: 24px; height: 24px; fill: currentColor; }
         .mobile-menu-nav { flex: 1; display: flex; flex-direction: column; padding: 2rem var(--container-padding); overflow-y: auto; }
-        .mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .mobile-menu-links a { display: block; padding: 1rem 0; font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--cream); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: color 0.2s ease, padding-left 0.2s ease; }
-        .mobile-menu-links a:hover, .mobile-menu-links a.active { color: var(--gold); padding-left: 0.5rem; }
+        .mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 0; margin: 0 calc(-1 * var(--container-padding)); }
+        .mobile-menu-links a { display: block; padding: 1.25rem var(--container-padding); font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--cream); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: color 0.2s ease, background-color 0.2s ease; }
+        .mobile-menu-links a:hover, .mobile-menu-links a.active { color: var(--gold); background-color: rgba(212, 175, 55, 0.05); }
         .mobile-menu-footer { padding: 1.5rem var(--container-padding) 2rem; border-top: 1px solid rgba(212, 175, 55, 0.1); }
         .mobile-menu-cta { display: block; width: 100%; padding: 1.125rem 2rem; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%); color: var(--black); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; text-align: center; border-radius: 6px; transition: all 0.2s ease; }
         .mobile-menu-cta:hover { background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25); }
@@ -462,8 +462,8 @@
         .stats-highlight {
             padding: 4rem 0;
             background: linear-gradient(180deg, var(--charcoal) 0%, var(--black) 100%);
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
             position: relative;
             overflow: hidden;
         }
@@ -1177,11 +1177,11 @@
             </ul>
 
             <div class="nav-right">
-                <a href="tel:5551234567" class="nav-phone">
+                <a href="tel:9733149767" class="nav-phone">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
-                    (555) 123-4567
+                    (973) 314-9767
                 </a>
                 <a href="contact.html" class="btn btn-primary"><span>Free Consultation</span></a>
             </div>
@@ -1220,9 +1220,9 @@
         </nav>
         <div class="mobile-menu-footer">
             <a href="contact.html" class="mobile-menu-cta">Free Consultation</a>
-            <a href="tel:5551234567" class="mobile-menu-phone">
+            <a href="tel:9733149767" class="mobile-menu-phone">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                (555) 123-4567
+                (973) 314-9767
             </a>
         </div>
     </div>
@@ -1290,39 +1290,35 @@
                     <p class="result-description">Settlement for a client who suffered spinal cord injuries in a collision with a commercial semi-truck.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$1.8M</div>
                     <span class="result-type">Medical Malpractice</span>
                     <p class="result-description">Verdict obtained for a family after a surgical error resulted in permanent nerve damage.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$1.2M</div>
                     <span class="result-type">Construction Accident</span>
                     <p class="result-description">Recovery for a worker injured in a scaffolding collapse due to negligence of a third-party contractor.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$950K</div>
                     <span class="result-type">Slip & Fall</span>
                     <p class="result-description">Premises liability settlement for a client who suffered a traumatic brain injury on icy commercial property.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$750K</div>
                     <span class="result-type">Motorcycle Accident</span>
                     <p class="result-description">Settlement for a rider struck by a distracted driver, covering all medical bills and lost wages.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$500K</div>
                     <span class="result-type">Wrongful Death</span>
                     <p class="result-description">Compassionate representation for a family who lost a loved one in a preventable workplace incident.</p>
                 </article>
-            </div>
-
-            <div class="results-disclaimer">
-                <p>Results vary depending on the facts of each case. Past successes do not guarantee future outcomes.</p>
             </div>
 
             <div class="results-cta">
@@ -1396,11 +1392,11 @@
             <p>Don't face the insurance companies alone. Get the compensation you're owed with a team that wins.</p>
             <div class="cta-banner-actions">
                 <a href="contact.html" class="btn-dark">Get Free Consultation</a>
-                <a href="tel:5551234567" class="cta-phone">
+                <a href="tel:9733149767" class="cta-phone">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
-                    (555) 123-4567
+                    (973) 314-9767
                 </a>
             </div>
         </div>
@@ -1429,7 +1425,7 @@
                         </p>
                         <p>
                             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                            (555) 123-4567
+                            (973) 314-9767
                         </p>
                     </div>
                 </div>
@@ -1510,7 +1506,6 @@
         const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
         const navToggle = document.querySelector('.nav-toggle');
-        let touchStartY = 0, touchCurrentY = 0, isDragging = false;
 
         function openMobileMenu() {
             mobileMenu.classList.add('active');
@@ -1526,7 +1521,6 @@
             navToggle.classList.remove('active');
             document.body.classList.remove('menu-open');
             navToggle.setAttribute('aria-expanded', 'false');
-            mobileMenu.style.transform = '';
         }
 
         if (navToggle) {
@@ -1540,12 +1534,6 @@
         document.querySelectorAll('.mobile-menu-links a, .mobile-menu-cta').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
-
-        if (mobileMenu) {
-            mobileMenu.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; isDragging = true; mobileMenu.style.transition = 'none'; }, { passive: true });
-            mobileMenu.addEventListener('touchmove', (e) => { if (!isDragging) return; touchCurrentY = e.touches[0].clientY; const deltaY = touchCurrentY - touchStartY; if (deltaY < 0) mobileMenu.style.transform = `translateY(${Math.max(deltaY, -window.innerHeight)}px)`; }, { passive: true });
-            mobileMenu.addEventListener('touchend', () => { if (!isDragging) return; isDragging = false; mobileMenu.style.transition = 'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)'; const deltaY = touchCurrentY - touchStartY; deltaY < -80 ? closeMobileMenu() : mobileMenu.style.transform = 'translateY(0)'; touchStartY = 0; touchCurrentY = 0; }, { passive: true });
-        }
 
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMobileMenu(); });
     </script>

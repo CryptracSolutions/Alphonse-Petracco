@@ -296,7 +296,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: var(--cream);
+            background: var(--gold);
             transition: all 0.15s ease;
             transform-origin: center;
         }
@@ -326,7 +326,7 @@
             z-index: 999;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.25s ease, visibility 0.25s ease;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
         .mobile-menu-backdrop.active {
@@ -345,7 +345,7 @@
             background-color: rgba(10, 10, 10, 0.99);
             z-index: 1000;
             transform: translateY(-100%);
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -376,19 +376,20 @@
             align-items: center;
             gap: 0.75rem;
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 600;
+            letter-spacing: -0.02em;
         }
 
         .mobile-menu-logo-icon {
-            width: 36px;
-            height: 36px;
+            width: 42px;
+            height: 42px;
             color: var(--gold);
         }
 
         .mobile-menu-logo-icon svg {
-            width: 100%;
-            height: 100%;
+            width: 42px;
+            height: 42px;
         }
 
         .mobile-menu-logo span {
@@ -404,22 +405,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--cream);
+            background: transparent;
+            border: none;
+            color: var(--gold);
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         .mobile-menu-close:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: rgba(212, 175, 55, 0.3);
+            opacity: 0.7;
         }
 
         .mobile-menu-close svg {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
         }
 
@@ -435,24 +434,25 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0;
+            margin: 0 calc(-1 * var(--container-padding));
         }
 
         .mobile-menu-links a {
             display: block;
-            padding: 1rem 0;
+            padding: 1.25rem var(--container-padding);
             font-family: var(--font-display);
             font-size: 1.5rem;
             font-weight: 500;
             color: var(--cream);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: color 0.2s ease, padding-left 0.2s ease;
+            transition: color 0.2s ease, background-color 0.2s ease;
         }
 
         .mobile-menu-links a:hover,
         .mobile-menu-links a.active {
             color: var(--gold);
-            padding-left: 0.5rem;
+            background-color: rgba(212, 175, 55, 0.05);
         }
 
         .mobile-menu-footer {
@@ -782,8 +782,8 @@
         .stats {
             padding: 4rem 0;
             background: linear-gradient(180deg, var(--black) 0%, var(--charcoal) 100%);
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
             position: relative;
             overflow: hidden;
         }
@@ -1158,6 +1158,16 @@
 
         .result-card:hover::before {
             opacity: 1;
+        }
+
+        .result-card.featured {
+            background: linear-gradient(145deg, rgba(212, 175, 55, 0.1), var(--charcoal));
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .result-card.featured::before {
+            opacity: 1;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
         }
 
         .result-amount {
@@ -1968,7 +1978,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-input" placeholder="(555) 123-4567" required>
+                            <input type="tel" id="phone" class="form-input" placeholder="(973) 314-9767" required>
                         </div>
                     </div>
 
@@ -2215,37 +2225,37 @@
             </header>
 
             <div class="results-grid">
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$12.5M</div>
                     <span class="result-type">Medical Malpractice</span>
                     <p class="result-desc">Surgical error resulting in permanent disability. Largest settlement in county history.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$8.2M</div>
                     <span class="result-type">Truck Accident</span>
                     <p class="result-desc">Multi-vehicle collision on interstate. Full recovery for family of four.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$5.7M</div>
                     <span class="result-type">Workplace Injury</span>
                     <p class="result-desc">Construction site negligence. Secured ongoing care and lost wages.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$3.9M</div>
                     <span class="result-type">Auto Accident</span>
                     <p class="result-desc">Drunk driver collision. Justice for traumatic brain injury victim.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$2.4M</div>
                     <span class="result-type">Premises Liability</span>
                     <p class="result-desc">Slip and fall at commercial property. Full compensation for spinal injuries.</p>
                 </article>
 
-                <article class="result-card">
+                <article class="result-card featured">
                     <div class="result-amount">$1.8M</div>
                     <span class="result-type">Product Liability</span>
                     <p class="result-desc">Defective equipment injury. Manufacturer held accountable.</p>
@@ -2688,10 +2698,6 @@
         const mobileMenuClose = document.getElementById('mobileMenuClose');
         const navToggle = document.querySelector('.nav-toggle');
 
-        let touchStartY = 0;
-        let touchCurrentY = 0;
-        let isDragging = false;
-
         function openMobileMenu() {
             mobileMenu.classList.add('active');
             mobileMenuBackdrop.classList.add('active');
@@ -2706,7 +2712,6 @@
             navToggle.classList.remove('active');
             document.body.classList.remove('menu-open');
             navToggle.setAttribute('aria-expanded', 'false');
-            mobileMenu.style.transform = '';
         }
 
         if (navToggle) {
@@ -2732,46 +2737,6 @@
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
-
-        // Swipe to close functionality
-        if (mobileMenu) {
-            mobileMenu.addEventListener('touchstart', (e) => {
-                touchStartY = e.touches[0].clientY;
-                isDragging = true;
-                mobileMenu.style.transition = 'none';
-            }, { passive: true });
-
-            mobileMenu.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                touchCurrentY = e.touches[0].clientY;
-                const deltaY = touchCurrentY - touchStartY;
-
-                // Only allow dragging upward (negative deltaY means swipe up, but we want swipe down to close)
-                if (deltaY < 0) {
-                    // Swipe up - translate menu up (follows finger)
-                    const translateY = Math.max(deltaY, -window.innerHeight);
-                    mobileMenu.style.transform = `translateY(${translateY}px)`;
-                }
-            }, { passive: true });
-
-            mobileMenu.addEventListener('touchend', () => {
-                if (!isDragging) return;
-                isDragging = false;
-                mobileMenu.style.transition = 'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)';
-
-                const deltaY = touchCurrentY - touchStartY;
-                // If dragged more than 80px up, close the menu
-                if (deltaY < -80) {
-                    closeMobileMenu();
-                } else {
-                    // Snap back to open position
-                    mobileMenu.style.transform = 'translateY(0)';
-                }
-
-                touchStartY = 0;
-                touchCurrentY = 0;
-            }, { passive: true });
-        }
 
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
