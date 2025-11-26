@@ -2374,7 +2374,7 @@
                     </svg>
                     (973) 314-9767
                 </a>
-                <a href="#consultation" class="btn btn-primary"><span>Free Consultation</span></a>
+                <button type="button" class="btn btn-primary open-consultation-modal"><span>Free Consultation</span></button>
             </div>
 
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -2418,7 +2418,7 @@
             </ul>
         </nav>
         <div class="mobile-menu-footer">
-            <a href="#consultation" class="mobile-menu-cta">Free Consultation</a>
+            <button type="button" class="mobile-menu-cta open-consultation-modal">Free Consultation</button>
             <a href="tel:9733149767" class="mobile-menu-phone">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -3415,13 +3415,22 @@
         (function() {
             const modal = document.getElementById('consultationModal');
             const openBtn = document.getElementById('openConsultationModal');
+            const openBtns = document.querySelectorAll('.open-consultation-modal');
             const closeBtn = document.getElementById('closeConsultationModal');
 
-            if (!modal || !openBtn || !closeBtn) return;
+            if (!modal || !closeBtn) return;
 
             function openModal() {
                 modal.classList.add('active');
                 document.body.classList.add('modal-open');
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    document.getElementById('mobileMenuBackdrop')?.classList.remove('active');
+                    document.querySelector('.nav-toggle')?.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
                 // Focus first input
                 setTimeout(() => {
                     const firstInput = modal.querySelector('input');
@@ -3432,10 +3441,10 @@
             function closeModal() {
                 modal.classList.remove('active');
                 document.body.classList.remove('modal-open');
-                openBtn.focus();
             }
 
-            openBtn.addEventListener('click', openModal);
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            openBtns.forEach(btn => btn.addEventListener('click', openModal));
             closeBtn.addEventListener('click', closeModal);
 
             // Close on overlay click (not card)
