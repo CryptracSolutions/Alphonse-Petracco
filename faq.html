@@ -38,7 +38,7 @@
         .nav-logo-icon svg { width: 42px; height: 42px; }
         .nav-logo span { background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-deep) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
-        .nav-links a { padding: 0.5rem 0.75rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em; color: var(--gray-light); transition: color 0.3s ease; position: relative; white-space: nowrap; vertical-align: middle; }
+        .nav-links a { display: inline-flex; align-items: center; padding: 0.5rem 0.75rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em; color: var(--gray-light); transition: color 0.3s ease; position: relative; white-space: nowrap; }
         .nav-links a::after { content: ''; position: absolute; bottom: 0.25rem; left: 1rem; right: 1rem; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform 0.3s var(--ease-out-quart); }
         .nav-links a:hover, .nav-links a.active { color: var(--gold); }
         .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
@@ -81,7 +81,7 @@
         /* Navigation Dropdowns (Desktop Only) */
         @media (min-width: 769px) {
             .nav-dropdown { position: relative; }
-            .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; vertical-align: middle; }
+            .nav-dropdown-trigger { gap: 0.35rem; }
             .nav-dropdown-trigger .dropdown-arrow { width: 12px; height: 12px; fill: currentColor; transition: transform 0.3s var(--ease-out-quart); flex-shrink: 0; }
             .nav-dropdown:hover .dropdown-arrow, .nav-dropdown.active .dropdown-arrow { transform: rotate(180deg); }
             .nav-dropdown-menu { position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(-10px); min-width: 220px; background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.98)); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 8px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, transform 0.3s var(--ease-out-quart), visibility 0.3s; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 1000; }
