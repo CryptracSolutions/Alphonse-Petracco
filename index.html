@@ -612,9 +612,14 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: flex-start;
             position: relative;
-            padding: calc(var(--section-padding) + 4rem) 0 var(--section-padding);
+            padding: calc(var(--section-padding) + 0.5rem) 0 var(--section-padding);
             overflow: hidden;
+        }
+
+        .hero > .container {
+            width: 100%;
         }
 
         .hero-bg {
@@ -664,10 +669,9 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .hero-text {
@@ -1029,6 +1033,251 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* ============================================
+           CONSULTATION MODAL
+           ============================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s var(--ease-out-quart);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.99));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s var(--ease-out-expo);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.1);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--gray-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: rotate(90deg);
+        }
+
+        .modal-close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            padding-right: 3rem;
+        }
+
+        .modal-subtitle {
+            color: var(--gray-light);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-form .btn {
+            width: 100%;
+            padding: 1.125rem;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* ============================================
+           HERO STATS (IN-HERO)
+           ============================================ */
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.45s both;
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+            padding-right: 2rem;
+            border-right: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-stat:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            margin-top: 0.25rem;
+        }
+
+        /* ============================================
+           HERO TRUST BADGES
+           ============================================ */
+        .hero-badges {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.7s both;
+        }
+
+        .hero-badges-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray);
+            white-space: nowrap;
+        }
+
+        .hero-badges-list {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .hero-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge-item:hover {
+            opacity: 1;
+            border-color: rgba(212, 175, 55, 0.2);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .hero-badge-item svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gold);
+        }
+
+        .hero-badge-item span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--gray-light);
+            white-space: nowrap;
+        }
+
+        /* ============================================
+           ENHANCED BUTTON MICRO-ANIMATIONS
+           ============================================ */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn-primary:hover::after {
+            transform: translateX(100%);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Large CTA button variant */
+        .btn-large {
+            padding: 1.25rem 2.5rem;
+            font-size: 0.95rem;
         }
 
         /* ============================================
@@ -1875,29 +2124,12 @@
            RESPONSIVE DESIGN
            ============================================ */
         @media (max-width: 1200px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
             .hero-text {
                 max-width: 100%;
-                text-align: center;
             }
 
-            .hero-subtitle,
-            .hero-tagline {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-ctas {
-                justify-content: center;
-            }
-
-            .hero-form-wrapper {
-                max-width: 500px;
-                margin: 0 auto;
+            .hero-badges {
+                flex-wrap: wrap;
             }
 
             .practice-grid {
@@ -1982,6 +2214,35 @@
 
             .hero-badge {
                 margin-bottom: 1.5rem;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .hero-stat {
+                border-right: none;
+                padding-right: 0;
+                flex: 0 0 calc(50% - 0.75rem);
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .hero-badges-list {
+                flex-wrap: wrap;
+            }
+
+            .modal-card {
+                padding: 1.75rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
             }
 
             .practice-grid {
@@ -2196,101 +2457,61 @@
                 <p class="hero-subtitle">
                     When you've been wronged, you deserve more than just representation. You deserve a team that fights with the strength of a lion and the precision of master strategists.
                 </p>
+
+                <!-- Hero Stats -->
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-target="500" data-prefix="$" data-suffix="M+">$0M+</span>
+                        <span class="hero-stat-label">Recovered</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-target="5000" data-suffix="+">0+</span>
+                        <span class="hero-stat-label">Cases Won</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-target="98" data-suffix="%">0%</span>
+                        <span class="hero-stat-label">Success Rate</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-target="25" data-suffix="+">0+</span>
+                        <span class="hero-stat-label">Years Exp.</span>
+                    </div>
+                </div>
+
                 <p class="hero-tagline">Lion Law – "Where Strength Meets Strategy"</p>
                 <div class="hero-ctas">
-                    <a href="tel:9733149767" class="btn btn-primary">
-                        <span>Call Now: (973) 314-9767</span>
-                    </a>
-                    <a href="#results" class="btn btn-outline">View Our Results</a>
-                </div>
-            </div>
-
-            <div class="hero-form-wrapper">
-                <form class="hero-form" id="consultation">
-                    <h3 class="hero-form-title">Free Case Evaluation</h3>
-                    <p class="hero-form-subtitle">Get your case reviewed by our expert attorneys. No fee unless we win.</p>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="name">Full Name</label>
-                            <input type="text" id="name" class="form-input" placeholder="John Smith" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-input" placeholder="(973) 314-9767" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="case-type">Type of Case</label>
-                        <div class="custom-select" data-placeholder="Select your case type...">
-                            <select id="case-type" class="form-select" required>
-                                <option value="">Select your case type...</option>
-                                <option value="auto">Auto Accident</option>
-                                <option value="truck">Truck Accident</option>
-                                <option value="motorcycle">Motorcycle Accident</option>
-                                <option value="workplace">Workplace Injury</option>
-                                <option value="medical">Medical Malpractice</option>
-                                <option value="premises">Slip & Fall / Premises</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <div class="custom-select-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false">
-                                <span class="placeholder">Select your case type...</span>
-                                <div class="custom-select-arrow">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7 10l5 5 5-5z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="custom-select-options" role="listbox">
-                                <div class="custom-select-option" data-value="auto" role="option">
-                                    <span>Auto Accident</span>
-                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                                </div>
-                                <div class="custom-select-option" data-value="truck" role="option">
-                                    <span>Truck Accident</span>
-                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                                </div>
-                                <div class="custom-select-option" data-value="motorcycle" role="option">
-                                    <span>Motorcycle Accident</span>
-                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                                </div>
-                                <div class="custom-select-option" data-value="workplace" role="option">
-                                    <span>Workplace Injury</span>
-                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                                </div>
-                                <div class="custom-select-option" data-value="medical" role="option">
-                                    <span>Medical Malpractice</span>
-                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                                </div>
-                                <div class="custom-select-option" data-value="premises" role="option">
-                                    <span>Slip & Fall / Premises</span>
-                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                                </div>
-                                <div class="custom-select-option" data-value="other" role="option">
-                                    <span>Other</span>
-                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="message">Brief Description</label>
-                        <textarea id="message" class="form-textarea" placeholder="Tell us what happened..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">
-                        <span>Get My Free Consultation</span>
+                    <button type="button" class="btn btn-primary btn-large" id="openConsultationModal">
+                        <span>Get Free Case Evaluation</span>
                     </button>
+                    <a href="tel:9733149767" class="btn btn-outline">
+                        <span>Call: (973) 314-9767</span>
+                    </a>
+                </div>
 
-                    <p class="form-disclaimer">By submitting, you agree to our Privacy Policy. Your information is secure and confidential.</p>
-                </form>
+                <!-- Trust Badges -->
+                <div class="hero-badges">
+                    <span class="hero-badges-label">Recognized By</span>
+                    <div class="hero-badges-list">
+                        <div class="hero-badge-item">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Super Lawyers</span>
+                        </div>
+                        <div class="hero-badge-item">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                            <span>Top 100 Trial Lawyers</span>
+                        </div>
+                        <div class="hero-badge-item">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span>Avvo 10.0</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2713,6 +2934,102 @@
         </div>
     </footer>
 
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="closeConsultationModal" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <h3 class="modal-title" id="modalTitle">Free Case Evaluation</h3>
+            <p class="modal-subtitle">Get your case reviewed by our expert attorneys. No fee unless we win.</p>
+
+            <form class="modal-form" id="consultationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="modal-name">Full Name</label>
+                        <input type="text" id="modal-name" class="form-input" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modal-phone">Phone Number</label>
+                        <input type="tel" id="modal-phone" class="form-input" placeholder="(973) 314-9767" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modal-email">Email Address</label>
+                    <input type="email" id="modal-email" class="form-input" placeholder="john@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modal-case-type">Type of Case</label>
+                    <div class="custom-select" data-placeholder="Select your case type...">
+                        <select id="modal-case-type" class="form-select" required>
+                            <option value="">Select your case type...</option>
+                            <option value="auto">Auto Accident</option>
+                            <option value="truck">Truck Accident</option>
+                            <option value="motorcycle">Motorcycle Accident</option>
+                            <option value="workplace">Workplace Injury</option>
+                            <option value="medical">Medical Malpractice</option>
+                            <option value="premises">Slip & Fall / Premises</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="custom-select-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="placeholder">Select your case type...</span>
+                            <div class="custom-select-arrow">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="custom-select-options" role="listbox">
+                            <div class="custom-select-option" data-value="auto" role="option">
+                                <span>Auto Accident</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="truck" role="option">
+                                <span>Truck Accident</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="motorcycle" role="option">
+                                <span>Motorcycle Accident</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="workplace" role="option">
+                                <span>Workplace Injury</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="medical" role="option">
+                                <span>Medical Malpractice</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="premises" role="option">
+                                <span>Slip & Fall / Premises</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="other" role="option">
+                                <span>Other</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modal-message">Brief Description</label>
+                    <textarea id="modal-message" class="form-textarea" placeholder="Tell us what happened..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <span>Get My Free Consultation</span>
+                </button>
+
+                <p class="form-disclaimer">By submitting, you agree to our Privacy Policy. Your information is secure and confidential.</p>
+            </form>
+        </div>
+    </div>
+
     <script>
         // ============================================
         // NAVIGATION SCROLL EFFECT
@@ -3090,6 +3407,112 @@
                     dropdowns.forEach(d => d.classList.remove('active'));
                 }
             });
+        })();
+
+        // ============================================
+        // CONSULTATION MODAL
+        // ============================================
+        (function() {
+            const modal = document.getElementById('consultationModal');
+            const openBtn = document.getElementById('openConsultationModal');
+            const closeBtn = document.getElementById('closeConsultationModal');
+
+            if (!modal || !openBtn || !closeBtn) return;
+
+            function openModal() {
+                modal.classList.add('active');
+                document.body.classList.add('modal-open');
+                // Focus first input
+                setTimeout(() => {
+                    const firstInput = modal.querySelector('input');
+                    if (firstInput) firstInput.focus();
+                }, 100);
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+                openBtn.focus();
+            }
+
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+
+            // Close on overlay click (not card)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            // Form submission
+            const form = document.getElementById('consultationForm');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // Show success feedback
+                    const btn = form.querySelector('.btn');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<span>Thank You! We\'ll Be In Touch.</span>';
+                    btn.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+                    setTimeout(() => {
+                        closeModal();
+                        form.reset();
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 2500);
+                });
+            }
+        })();
+
+        // ============================================
+        // HERO STATS COUNT-UP ANIMATION
+        // ============================================
+        (function() {
+            const stats = document.querySelectorAll('.hero-stat-number');
+            if (!stats.length) return;
+
+            const animateCount = (el) => {
+                const target = parseInt(el.dataset.target);
+                const prefix = el.dataset.prefix || '';
+                const suffix = el.dataset.suffix || '';
+                const duration = 2000;
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease out cubic
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(easeOut * target);
+                    el.textContent = prefix + current.toLocaleString() + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    }
+                };
+
+                requestAnimationFrame(updateCount);
+            };
+
+            // Use IntersectionObserver to trigger animation when visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCount(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            stats.forEach(stat => observer.observe(stat));
         })();
 
     </script>
