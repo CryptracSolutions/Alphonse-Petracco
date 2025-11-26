@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Results | Lion Law</title>
-    <meta name="description" content="View Lion Law's proven track record. $50M+ recovered for injury victims. See our recent victories in truck accidents, medical malpractice, and more.">
+    <title>Testimonials | Lion Law</title>
+    <meta name="description" content="Read what our clients say about Lion Law. Real testimonials from injury victims who trusted us with their cases and achieved successful outcomes.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -458,79 +458,15 @@
         }
 
         /* ============================================
-           STATS HIGHLIGHT
+           TESTIMONIALS SECTION
            ============================================ */
-        .stats-highlight {
-            padding: 4rem 0;
-            background: linear-gradient(180deg, var(--charcoal) 0%, var(--black) 100%);
-            border-top: 1px solid var(--gold);
-            border-bottom: 1px solid var(--gold);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats-highlight::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.03), transparent);
-        }
-
-        .stats-highlight-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .stat-highlight-item {
-            text-align: center;
-            padding: 1.5rem;
-            position: relative;
-        }
-
-        .stat-highlight-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 60%;
-            width: 1px;
-            background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-        }
-
-        .stat-highlight-number {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-highlight-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--gray-light);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        /* ============================================
-           RESULTS SECTION
-           ============================================ */
-        .results-section {
+        .testimonials-section {
             padding: var(--section-padding) 0;
             background: var(--black);
             position: relative;
         }
 
-        .results-header {
+        .testimonials-header {
             text-align: center;
             margin-bottom: 4rem;
         }
@@ -561,236 +497,91 @@
             margin: 0 auto;
         }
 
-        .results-grid {
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .result-card {
-            background: linear-gradient(145deg, var(--charcoal), var(--black-light));
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 16px;
             padding: 2.5rem;
-            text-align: center;
             position: relative;
-            overflow: hidden;
             transition: all 0.4s var(--ease-out-quart);
         }
 
-        .result-card::before {
-            content: '';
+        .testimonial-card:hover {
+            background: rgba(212, 175, 55, 0.03);
+            border-color: rgba(212, 175, 55, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-quote {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .result-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(145deg, rgba(212, 175, 55, 0.08), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .result-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 80px rgba(212, 175, 55, 0.1);
-        }
-
-        .result-card:hover::before,
-        .result-card:hover::after {
-            opacity: 1;
-        }
-
-        .result-amount {
+            top: 1.5rem;
+            left: 2rem;
             font-family: var(--font-display);
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 600;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 5rem;
             line-height: 1;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .result-type {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
             color: var(--gold);
-            padding: 0.5rem 1rem;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 100px;
-            margin-bottom: 1.25rem;
-            position: relative;
-            z-index: 1;
+            opacity: 0.2;
         }
 
-        .result-description {
-            font-size: 0.95rem;
-            color: var(--gray-light);
+        .testimonial-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--gold);
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
             line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Featured result card */
-        .result-card.featured {
-            grid-column: span 1;
-            background: linear-gradient(145deg, rgba(212, 175, 55, 0.1), var(--charcoal));
-            border-color: rgba(212, 175, 55, 0.2);
-        }
-
-        .result-card.featured::before {
-            opacity: 1;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
-        }
-
-        .result-card.featured .result-amount {
-            font-size: clamp(3rem, 5vw, 4rem);
-        }
-
-        /* Results disclaimer */
-        .results-disclaimer {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            margin-bottom: 3rem;
-        }
-
-        .results-disclaimer p {
-            color: var(--gray);
-            font-size: 0.9rem;
+            color: var(--cream);
+            margin-bottom: 2rem;
             font-style: italic;
         }
 
-        .results-cta {
-            text-align: center;
-        }
-
-        .results-cta .btn {
-            padding: 1.125rem 2.5rem;
-        }
-
-        /* ============================================
-           NO WIN NO FEE SECTION
-           ============================================ */
-        .no-fee-section {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, var(--charcoal) 0%, var(--black) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .no-fee-bg {
-            position: absolute;
-            inset: 0;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='%23D4AF37' fill-opacity='0.3'/%3E%3C/svg%3E");
-            background-size: 60px 60px;
-        }
-
-        .no-fee-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+        .testimonial-author {
+            display: flex;
             align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .no-fee-content h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .no-fee-content h2 .accent {
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .no-fee-content p {
-            font-size: 1.1rem;
-            color: var(--gray-light);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .no-fee-content p strong {
-            color: var(--cream);
-        }
-
-        .no-fee-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .no-fee-feature {
-            display: flex;
-            align-items: flex-start;
             gap: 1rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .no-fee-feature:hover {
-            background: rgba(212, 175, 55, 0.05);
-            border-color: rgba(212, 175, 55, 0.2);
-        }
-
-        .no-fee-feature-icon {
-            flex-shrink: 0;
+        .testimonial-avatar {
             width: 48px;
             height: 48px;
             background: linear-gradient(135deg, var(--gold), var(--gold-deep));
-            border-radius: 10px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--black);
         }
 
-        .no-fee-feature-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--black);
-        }
-
-        .no-fee-feature-content h4 {
-            font-size: 1.1rem;
+        .testimonial-info h4 {
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
 
-        .no-fee-feature-content p {
-            font-size: 0.9rem;
-            color: var(--gray-light);
-            margin-bottom: 0;
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: var(--gray);
         }
 
         /* ============================================
@@ -1052,29 +843,16 @@
            RESPONSIVE DESIGN
            ============================================ */
         @media (max-width: 1200px) {
-            .results-grid {
+            .testimonials-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .no-fee-grid {
-                gap: 3rem;
             }
         }
 
         @media (max-width: 992px) {
-            .stats-highlight-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .results-grid {
+            .testimonials-grid {
                 grid-template-columns: 1fr;
-                max-width: 500px;
-                margin: 0 auto 4rem;
-            }
-
-            .no-fee-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+                max-width: 600px;
+                margin: 0 auto;
             }
 
             .footer-grid {
@@ -1097,23 +875,6 @@
             .page-hero {
                 min-height: 40vh;
                 padding-top: 8rem;
-            }
-
-            .stats-highlight-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-highlight-item::after {
-                display: none;
-            }
-
-            .stat-highlight-item {
-                padding: 1rem;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            }
-
-            .stat-highlight-item:last-child {
-                border-bottom: none;
             }
 
             .cta-banner-actions {
@@ -1140,17 +901,6 @@
                 gap: 0.75rem;
             }
         }
-
-        @media (max-width: 480px) {
-            .no-fee-feature {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .no-fee-feature-icon {
-                margin: 0 auto;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1172,8 +922,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="practice.html">Practice Areas</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="case-results.html" class="active">Case Results</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="case-results.html">Case Results</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -1215,8 +965,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="practice.html">Practice Areas</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="case-results.html" class="active">Case Results</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="case-results.html">Case Results</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -1246,144 +996,158 @@
 
         <div class="container page-hero-content">
             <span class="page-hero-label">
-                <span></span>Lion Law<span></span>
+                <span></span>Client Stories<span></span>
             </span>
-            <h1 class="page-hero-title">Case <span class="accent">Results</span></h1>
+            <h1 class="page-hero-title">What Our <span class="accent">Clients</span> Say</h1>
             <p class="page-hero-breadcrumb">
                 <a href="index.html">Home</a>
                 <span class="separator">/</span>
-                <span>Case Results</span>
+                <span>Testimonials</span>
             </p>
         </div>
     </section>
 
-    <!-- Stats Highlight -->
-    <section class="stats-highlight">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
         <div class="container">
-            <div class="stats-highlight-grid">
-                <div class="stat-highlight-item">
-                    <div class="stat-highlight-number">$50M+</div>
-                    <div class="stat-highlight-label">Total Recovered</div>
-                </div>
-                <div class="stat-highlight-item">
-                    <div class="stat-highlight-number">1,000+</div>
-                    <div class="stat-highlight-label">Cases Won</div>
-                </div>
-                <div class="stat-highlight-item">
-                    <div class="stat-highlight-number">98%</div>
-                    <div class="stat-highlight-label">Success Rate</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section class="results-section">
-        <div class="container">
-            <div class="results-header">
-                <span class="section-label">Proven Track Record</span>
-                <h2 class="section-title">Recent Victories</h2>
-                <p class="section-subtitle">We fight for maximum compensation in every case. Here are some of our recent results for injury victims and their families.</p>
+            <div class="testimonials-header">
+                <span class="section-label">Real Results</span>
+                <h2 class="section-title">Hear From Our Clients</h2>
+                <p class="section-subtitle">Real testimonials from injury victims who trusted us with their cases and achieved successful outcomes.</p>
             </div>
 
-            <div class="results-grid">
-                <article class="result-card featured">
-                    <div class="result-amount">$2.5M</div>
-                    <span class="result-type">Truck Accident</span>
-                    <p class="result-description">Settlement for a client who suffered spinal cord injuries in a collision with a commercial semi-truck.</p>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 - Michael R. -->
+                <article class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "After my accident, I was overwhelmed and didn't know where to turn. Lion Law not only handled everything professionally but fought for every dollar I deserved. They secured a settlement that exceeded my expectations."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div class="testimonial-info">
+                            <h4>Michael R.</h4>
+                            <span>Auto Accident Victim</span>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="result-card featured">
-                    <div class="result-amount">$1.8M</div>
-                    <span class="result-type">Medical Malpractice</span>
-                    <p class="result-description">Verdict obtained for a family after a surgical error resulted in permanent nerve damage.</p>
+                <!-- Testimonial 2 - Sarah T. -->
+                <article class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "The medical malpractice case seemed impossible until Lion Law took it on. Their dedication to uncovering the truth and their expertise in the courtroom was remarkable. I'm forever grateful."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ST</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah T.</h4>
+                            <span>Medical Malpractice Client</span>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="result-card featured">
-                    <div class="result-amount">$1.2M</div>
-                    <span class="result-type">Construction Accident</span>
-                    <p class="result-description">Recovery for a worker injured in a scaffolding collapse due to negligence of a third-party contractor.</p>
+                <!-- Testimonial 3 - James D. -->
+                <article class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "After my workplace injury, my employer tried to deny responsibility. Lion Law stood by me every step, and we won. They truly fight like lions for their clients."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-info">
+                            <h4>James D.</h4>
+                            <span>Workplace Injury Client</span>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="result-card featured">
-                    <div class="result-amount">$950K</div>
-                    <span class="result-type">Slip & Fall</span>
-                    <p class="result-description">Premises liability settlement for a client who suffered a traumatic brain injury on icy commercial property.</p>
+                <!-- Testimonial 4 - Maria G. -->
+                <article class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "After a rideshare crash left me out of work, Lion Law handled the paperwork, kept me updated, and delivered a settlement that covered everything."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MG</div>
+                        <div class="testimonial-info">
+                            <h4>Maria G.</h4>
+                            <span>Rideshare Injury Client</span>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="result-card featured">
-                    <div class="result-amount">$750K</div>
-                    <span class="result-type">Motorcycle Accident</span>
-                    <p class="result-description">Settlement for a rider struck by a distracted driver, covering all medical bills and lost wages.</p>
+                <!-- Testimonial 5 - Thomas L. -->
+                <article class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "They were patient, honest, and relentless with the insurance adjuster. I never felt alone during my rehabilitation."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TL</div>
+                        <div class="testimonial-info">
+                            <h4>Thomas L.</h4>
+                            <span>Spinal Injury Client</span>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="result-card featured">
-                    <div class="result-amount">$500K</div>
-                    <span class="result-type">Wrongful Death</span>
-                    <p class="result-description">Compassionate representation for a family who lost a loved one in a preventable workplace incident.</p>
+                <!-- Testimonial 6 - Priya N. -->
+                <article class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "The firm took my mother's nursing home case seriously and secured accountability and funds for her continued care."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">PN</div>
+                        <div class="testimonial-info">
+                            <h4>Priya N.</h4>
+                            <span>Family Member</span>
+                        </div>
+                    </div>
                 </article>
-            </div>
-
-            <div class="results-cta">
-                <a href="contact.html" class="btn btn-primary"><span>Discuss Your Case for Free</span></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- No Win No Fee Section -->
-    <section class="no-fee-section">
-        <div class="no-fee-bg"></div>
-
-        <div class="container no-fee-grid">
-            <div class="no-fee-content">
-                <h2>No Win, <span class="accent">No Fee</span></h2>
-                <p>
-                    At Lion Law, we believe everyone deserves access to exceptional legal representation, regardless of their financial situation. That's why we work on a <strong>contingency fee basis</strong>&mdash;you pay nothing unless we win your case.
-                </p>
-                <p>
-                    We cover all upfront costs, from investigation to expert witnesses. Our fee only comes from a percentage of your recovery. If we don't win, you owe us nothing.
-                </p>
-                <div style="margin-top: 2rem;">
-                    <a href="contact.html" class="btn btn-primary"><span>Get Started Today</span></a>
-                </div>
-            </div>
-
-            <div class="no-fee-features">
-                <div class="no-fee-feature">
-                    <div class="no-fee-feature-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
-                        </svg>
-                    </div>
-                    <div class="no-fee-feature-content">
-                        <h4>Zero Upfront Costs</h4>
-                        <p>No retainers, no hourly fees. We invest in your case.</p>
-                    </div>
-                </div>
-
-                <div class="no-fee-feature">
-                    <div class="no-fee-feature-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                        </svg>
-                    </div>
-                    <div class="no-fee-feature-content">
-                        <h4>We Cover All Expenses</h4>
-                        <p>Expert witnesses, medical records, investigation&mdash;all on us.</p>
-                    </div>
-                </div>
-
-                <div class="no-fee-feature">
-                    <div class="no-fee-feature-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
-                    <div class="no-fee-feature-content">
-                        <h4>Only Pay If We Win</h4>
-                        <p>Our fee is a percentage of your recovery. No win = no fee.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1420,21 +1184,15 @@
                         </div>
                         <span>Lion Law</span>
                     </a>
-                    <p class="footer-desc">
-                        Premier personal injury law firm dedicated to fighting for maximum compensation. Where strength meets strategy.
-                    </p>
+                    <p class="footer-desc">Fighting for injury victims since 1998. We don't get paid unless you win.</p>
                     <div class="footer-contact">
                         <p>
                             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            123 Justice Avenue, Suite 500, New York, NY 10001
+                            123 Main Street, Suite 100, Newark, NJ 07102
                         </p>
                         <p>
                             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                             (973) 314-9767
-                        </p>
-                        <p>
-                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            alphonsepetracco@accidentsinjurylawyer.com
                         </p>
                     </div>
                 </div>
@@ -1444,9 +1202,9 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
+                        <li><a href="practice.html">Practice Areas</a></li>
                         <li><a href="case-results.html">Case Results</a></li>
                         <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -1454,52 +1212,49 @@
                 <div class="footer-column">
                     <h4>Practice Areas</h4>
                     <ul class="footer-links">
-                        <li><a href="practice.html">Auto Accidents</a></li>
-                        <li><a href="practice.html">Truck Accidents</a></li>
-                        <li><a href="practice.html">Motorcycle Accidents</a></li>
-                        <li><a href="practice.html">Workplace Injuries</a></li>
-                        <li><a href="practice.html">Medical Malpractice</a></li>
-                        <li><a href="practice.html">Premises Liability</a></li>
-                        <li><a href="practice.html">Wrongful Death</a></li>
+                        <li><a href="#">Auto Accidents</a></li>
+                        <li><a href="#">Truck Accidents</a></li>
+                        <li><a href="#">Medical Malpractice</a></li>
+                        <li><a href="#">Workplace Injuries</a></li>
+                        <li><a href="#">Premises Liability</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Connect With Us</h4>
+                    <h4>Connect</h4>
                     <ul class="footer-links">
-                        <li><a href="contact.html">Free Case Review</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="blog.html">Resources</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="blog.html">Blog & Resources</a></li>
+                        <li><a href="#">Free Case Review</a></li>
+                        <li><a href="#">Client Portal</a></li>
                     </ul>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-                        </a>
                         <a href="#" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.58-2.11-9.96-5.02-.42.72-.66 1.56-.66 2.46 0 1.68.85 3.16 2.14 4.02-.79-.02-1.53-.24-2.18-.6v.06c0 2.35 1.67 4.31 3.88 4.76-.4.1-.83.16-1.27.16-.31 0-.62-.03-.92-.08.63 1.96 2.45 3.39 4.61 3.43-1.69 1.32-3.83 2.1-6.15 2.1-.4 0-.8-.02-1.19-.07 2.19 1.4 4.78 2.22 7.57 2.22 9.07 0 14.02-7.52 14.02-14.02 0-.21 0-.43-.01-.64.96-.69 1.79-1.56 2.45-2.55z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
                         </a>
                         <a href="#" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 Lion Law. All Rights Reserved.</p>
+                <p class="footer-copyright">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Lion Law. All rights reserved.</p>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
                 </div>
+                <p class="footer-disclaimer">
+                    *Past results do not guarantee future outcomes. Each case is unique and must be evaluated on its own merits. This website is for informational purposes only and does not constitute legal advice. Contacting Lion Law does not create an attorney-client relationship.
+                </p>
             </div>
-
-            <p class="footer-disclaimer">
-                The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship. Past results do not guarantee future outcomes.
-            </p>
         </div>
     </footer>
 

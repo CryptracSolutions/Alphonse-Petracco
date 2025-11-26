@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lion Law | Where Strength Meets Strategy</title>
-    <meta name="description" content="Premier personal injury law firm fighting for maximum compensation. Free consultation available 24/7.">
+    <title>Accident Injury Attorneys | Lion Law</title>
+    <meta name="description" content="Accident injury attorneys fighting for maximum compensation. Free consultation available 24/7. Lion Law - Where Strength Meets Strategy.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -428,6 +428,7 @@
             flex-direction: column;
             padding: 2rem var(--container-padding);
             overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .mobile-menu-links {
@@ -449,10 +450,13 @@
             transition: color 0.2s ease, background-color 0.2s ease;
         }
 
-        .mobile-menu-links a:hover,
-        .mobile-menu-links a.active {
+        .mobile-menu-links a:hover {
             color: var(--gold);
             background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .mobile-menu-links a.active {
+            color: var(--gold);
         }
 
         .mobile-menu-footer {
@@ -1170,6 +1174,12 @@
             background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
         }
 
+        .result-card.featured:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 80px rgba(212, 175, 55, 0.1);
+        }
+
         .result-amount {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 4vw, 3.5rem);
@@ -1863,17 +1873,17 @@
                 <li><a href="practice.html">Practice Areas</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="case-results.html">Case Results</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
             <div class="nav-right">
-                <a href="tel:1-800-555-LION" class="nav-phone">
+                <a href="tel:9733149767" class="nav-phone">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
-                    1-800-555-LION
+                    (973) 314-9767
                 </a>
                 <a href="#consultation" class="btn btn-primary"><span>Free Consultation</span></a>
             </div>
@@ -1912,18 +1922,18 @@
                 <li><a href="practice.html">Practice Areas</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="case-results.html">Case Results</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="mobile-menu-footer">
             <a href="#consultation" class="mobile-menu-cta">Free Consultation</a>
-            <a href="tel:1-800-555-LION" class="mobile-menu-phone">
+            <a href="tel:9733149767" class="mobile-menu-phone">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
-                1-800-555-LION
+                (973) 314-9767
             </a>
         </div>
     </div>
@@ -1948,7 +1958,7 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <div class="hero-badge">
-                    Premier Personal Injury Firm
+                    Accident Injury Attorneys
                 </div>
                 <h1 class="hero-title">
                     Injured? <br>
@@ -1957,10 +1967,10 @@
                 <p class="hero-subtitle">
                     When you've been wronged, you deserve more than just representation. You deserve a team that fights with the strength of a lion and the precision of master strategists.
                 </p>
-                <p class="hero-tagline">"Where Strength Meets Strategy"</p>
+                <p class="hero-tagline">Lion Law – "Where Strength Meets Strategy"</p>
                 <div class="hero-ctas">
-                    <a href="tel:1-800-555-LION" class="btn btn-primary">
-                        <span>Call Now: 1-800-555-LION</span>
+                    <a href="tel:9733149767" class="btn btn-primary">
+                        <span>Call Now: (973) 314-9767</span>
                     </a>
                     <a href="#results" class="btn btn-outline">View Our Results</a>
                 </div>
@@ -2268,83 +2278,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="testimonials-bg"></div>
-        <div class="container">
-            <header class="section-header">
-                <span class="section-label">Client Stories</span>
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-subtitle">Real testimonials from clients who trusted us with their cases.</p>
-            </header>
-
-            <div class="testimonials-slider">
-                <article class="testimonial-card">
-                    <span class="testimonial-quote">"</span>
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    </div>
-                    <p class="testimonial-text">
-                        "After my accident, I was overwhelmed and didn't know where to turn. Lion Law not only handled everything professionally but fought for every dollar I deserved. They secured a settlement that exceeded my expectations."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MR</div>
-                        <div class="testimonial-info">
-                            <h4>Michael R.</h4>
-                            <span>Auto Accident Victim</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <span class="testimonial-quote">"</span>
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    </div>
-                    <p class="testimonial-text">
-                        "The medical malpractice case seemed impossible until Lion Law took it on. Their dedication to uncovering the truth and their expertise in the courtroom was remarkable. I'm forever grateful."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">ST</div>
-                        <div class="testimonial-info">
-                            <h4>Sarah T.</h4>
-                            <span>Medical Malpractice Client</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <span class="testimonial-quote">"</span>
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    </div>
-                    <p class="testimonial-text">
-                        "After my workplace injury, my employer tried to deny responsibility. Lion Law stood by me every step, and we won. They truly fight like lions for their clients."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">JD</div>
-                        <div class="testimonial-info">
-                            <h4>James D.</h4>
-                            <span>Workplace Injury Client</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <!-- Awards Section -->
     <section class="awards">
         <div class="container awards-inner">
@@ -2402,11 +2335,11 @@
             <p>Don't let insurance companies undervalue your claim. Let us fight for what's rightfully yours.</p>
             <div class="cta-banner-actions">
                 <a href="#consultation" class="btn btn-dark">Start Your Free Case Review</a>
-                <a href="tel:1-800-555-LION" class="cta-phone">
+                <a href="tel:9733149767" class="cta-phone">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
-                    1-800-555-LION
+                    (973) 314-9767
                 </a>
             </div>
         </div>
@@ -2437,11 +2370,11 @@
                         </p>
                         <p>
                             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                            1-800-555-LION
+                            (973) 314-9767
                         </p>
                         <p>
                             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            contact@lionlaw.com
+                            alphonsepetracco@accidentsinjurylawyer.com
                         </p>
                     </div>
                 </div>
@@ -2452,7 +2385,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="case-results.html">Case Results</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -2501,7 +2434,6 @@
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
-                    <a href="#">Disclaimer</a>
                 </div>
             </div>
 
@@ -2752,7 +2684,7 @@
         if (chatBtn) {
             chatBtn.addEventListener('click', () => {
                 // In production, this would open a chat interface
-                alert('Chat feature coming soon! Call us at 1-800-555-LION for immediate assistance.');
+                alert('Chat feature coming soon! Call us at (973) 314-9767 for immediate assistance.');
             });
         }
     </script>

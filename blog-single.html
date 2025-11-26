@@ -92,10 +92,11 @@
         .mobile-menu-close { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; color: var(--gold); cursor: pointer; transition: opacity 0.2s ease; }
         .mobile-menu-close:hover { opacity: 0.7; }
         .mobile-menu-close svg { width: 24px; height: 24px; fill: currentColor; }
-        .mobile-menu-nav { flex: 1; display: flex; flex-direction: column; padding: 2rem var(--container-padding); overflow-y: auto; }
+        .mobile-menu-nav { flex: 1; display: flex; flex-direction: column; padding: 2rem var(--container-padding); overflow-y: auto; overflow-x: hidden; }
         .mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 0; margin: 0 calc(-1 * var(--container-padding)); }
         .mobile-menu-links a { display: block; padding: 1.25rem var(--container-padding); font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--cream); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: color 0.2s ease, background-color 0.2s ease; }
-        .mobile-menu-links a:hover, .mobile-menu-links a.active { color: var(--gold); background-color: rgba(212, 175, 55, 0.05); }
+        .mobile-menu-links a:hover { color: var(--gold); background-color: rgba(212, 175, 55, 0.05); }
+        .mobile-menu-links a.active { color: var(--gold); }
         .mobile-menu-footer { padding: 1.5rem var(--container-padding) 2rem; border-top: 1px solid rgba(212, 175, 55, 0.1); }
         .mobile-menu-cta { display: block; width: 100%; padding: 1.125rem 2rem; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%); color: var(--black); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; text-align: center; border-radius: 6px; transition: all 0.2s ease; }
         .mobile-menu-cta:hover { background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25); }
@@ -338,6 +339,7 @@
                 <li><a href="practice.html">Practice Areas</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="case-results.html">Case Results</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -372,6 +374,7 @@
                 <li><a href="practice.html">Practice Areas</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="case-results.html">Case Results</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -687,60 +690,94 @@
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo">
                         <div class="footer-logo-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660"><g transform="translate(660, 660) scale(-1, -1)"><path fill="currentColor" fill-rule="evenodd" d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156"/></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660">
+                                <g transform="translate(660, 660) scale(-1, -1)">
+                                <path fill="currentColor" fill-rule="evenodd" d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156"/>
+                                </g>
+                            </svg>
                         </div>
                         <span>Lion Law</span>
                     </a>
-                    <p class="footer-desc">Fighting for injury victims since 1998. We don't get paid unless you win.</p>
+                    <p class="footer-desc">
+                        Premier personal injury law firm dedicated to fighting for maximum compensation. Where strength meets strategy.
+                    </p>
                     <div class="footer-contact">
-                        <p><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>123 Main Street, Suite 100, Newark, NJ 07102</p>
-                        <p><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>(973) 314-9767</p>
+                        <p>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            123 Justice Avenue, Suite 500, New York, NY 10001
+                        </p>
+                        <p>
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            (973) 314-9767
+                        </p>
+                        <p>
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            alphonsepetracco@accidentsinjurylawyer.com
+                        </p>
                     </div>
                 </div>
+
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="practice.html">Practice Areas</a></li>
                         <li><a href="case-results.html">Case Results</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-column">
                     <h4>Practice Areas</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Auto Accidents</a></li>
-                        <li><a href="#">Truck Accidents</a></li>
-                        <li><a href="#">Medical Malpractice</a></li>
-                        <li><a href="#">Workplace Injuries</a></li>
-                        <li><a href="#">Premises Liability</a></li>
+                        <li><a href="practice.html">Auto Accidents</a></li>
+                        <li><a href="practice.html">Truck Accidents</a></li>
+                        <li><a href="practice.html">Motorcycle Accidents</a></li>
+                        <li><a href="practice.html">Workplace Injuries</a></li>
+                        <li><a href="practice.html">Medical Malpractice</a></li>
+                        <li><a href="practice.html">Premises Liability</a></li>
+                        <li><a href="practice.html">Wrongful Death</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-column">
-                    <h4>Connect</h4>
+                    <h4>Connect With Us</h4>
                     <ul class="footer-links">
-                        <li><a href="blog.html">Blog & Resources</a></li>
-                        <li><a href="#">Free Case Review</a></li>
-                        <li><a href="#">Client Portal</a></li>
+                        <li><a href="contact.html">Free Case Review</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="blog.html">Resources</a></li>
+                        <li><a href="#">Careers</a></li>
                     </ul>
                     <div class="footer-social">
-                        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.58-2.11-9.96-5.02-.42.72-.66 1.56-.66 2.46 0 1.68.85 3.16 2.14 4.02-.79-.02-1.53-.24-2.18-.6v.06c0 2.35 1.67 4.31 3.88 4.76-.4.1-.83.16-1.27.16-.31 0-.62-.03-.92-.08.63 1.96 2.45 3.39 4.61 3.43-1.69 1.32-3.83 2.1-6.15 2.1-.4 0-.8-.02-1.19-.07 2.19 1.4 4.78 2.22 7.57 2.22 9.07 0 14.02-7.52 14.02-14.02 0-.21 0-.43-.01-.64.96-.69 1.79-1.56 2.45-2.55z"/></svg></a>
-                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
-                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"/></svg></a>
-                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p class="footer-copyright">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Lion Law. All rights reserved.</p>
+                <p class="footer-copyright">&copy; 2024 Lion Law. All Rights Reserved.</p>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
-                    <a href="#">Disclaimer</a>
                 </div>
-                <p class="footer-disclaimer">*Past results do not guarantee future outcomes. Each case is unique and must be evaluated on its own merits. This website is for informational purposes only and does not constitute legal advice.</p>
             </div>
+
+            <p class="footer-disclaimer">
+                The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship. Past results do not guarantee future outcomes.
+            </p>
         </div>
     </footer>
 
