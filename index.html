@@ -507,6 +507,101 @@
         }
 
         /* ============================================
+           NAVIGATION DROPDOWNS (Desktop Only)
+           ============================================ */
+        @media (min-width: 769px) {
+            .nav-dropdown {
+                position: relative;
+            }
+
+            .nav-dropdown-trigger {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+            }
+
+            .nav-dropdown-trigger .dropdown-arrow {
+                width: 12px;
+                height: 12px;
+                fill: currentColor;
+                transition: transform 0.3s var(--ease-out-quart);
+                flex-shrink: 0;
+            }
+
+            .nav-dropdown:hover .dropdown-arrow,
+            .nav-dropdown.active .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+
+            .nav-dropdown-menu {
+                position: absolute;
+                top: calc(100% + 0.5rem);
+                left: 50%;
+                transform: translateX(-50%) translateY(-10px);
+                min-width: 220px;
+                background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.98));
+                border: 1px solid rgba(212, 175, 55, 0.15);
+                border-radius: 8px;
+                padding: 0.5rem 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, transform 0.3s var(--ease-out-quart), visibility 0.3s;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                z-index: 1000;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-menu,
+            .nav-dropdown.active .nav-dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .nav-dropdown-menu a {
+                display: block;
+                padding: 0.75rem 1.25rem;
+                font-size: 0.85rem;
+                font-weight: 500;
+                color: var(--gray-light);
+                white-space: nowrap;
+                transition: all 0.2s ease;
+                position: relative;
+            }
+
+            .nav-dropdown-menu a::after {
+                display: none;
+            }
+
+            .nav-dropdown-menu a:hover {
+                background: rgba(212, 175, 55, 0.1);
+                color: var(--gold);
+                padding-left: 1.5rem;
+            }
+
+            .nav-dropdown::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 0.5rem;
+                background: transparent;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-dropdown-menu {
+                display: none !important;
+            }
+
+            .nav-dropdown-trigger .dropdown-arrow {
+                display: none;
+            }
+        }
+
+        /* ============================================
            HERO SECTION
            ============================================ */
         .hero {
@@ -742,6 +837,158 @@
         .form-select option {
             background: var(--charcoal);
             color: var(--cream);
+        }
+
+        /* ============================================
+           CUSTOM SELECT DROPDOWN
+           ============================================ */
+        .custom-select {
+            position: relative;
+            width: 100%;
+        }
+
+        .custom-select .form-select {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .custom-select-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: var(--cream);
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .custom-select-trigger:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .custom-select.open .custom-select-trigger,
+        .custom-select-trigger:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .custom-select-trigger .placeholder {
+            color: var(--gray);
+        }
+
+        .custom-select-arrow {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s var(--ease-out-quart);
+        }
+
+        .custom-select-arrow svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--gold);
+        }
+
+        .custom-select.open .custom-select-arrow {
+            transform: rotate(180deg);
+        }
+
+        .custom-select-options {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.98));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.25s var(--ease-out-quart);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .custom-select.open .custom-select-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .custom-select-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.875rem 1rem;
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .custom-select-option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--cream);
+        }
+
+        .custom-select-option.selected {
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .custom-select-option .check-icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .custom-select-option .check-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--gold);
+        }
+
+        .custom-select-option.selected .check-icon {
+            opacity: 1;
+        }
+
+        /* Custom scrollbar for options */
+        .custom-select-options::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-select-options::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .custom-select-options::-webkit-scrollbar-thumb {
+            background: var(--gold-dark);
+            border-radius: 3px;
+        }
+
+        .custom-select-options::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
         }
 
         .form-textarea {
@@ -1870,11 +2117,37 @@
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="practice.html">Practice Areas</a></li>
+                <li class="nav-dropdown">
+                    <a href="practice.html" class="nav-dropdown-trigger">
+                        Practice Areas
+                        <svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z"/></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="practice.html#motor-vehicles">Motor Vehicle Accidents</a>
+                        <a href="practice.html#catastrophic-injuries">Catastrophic Injuries</a>
+                        <a href="practice.html#premises-liability">Slip & Fall / Premises</a>
+                        <a href="practice.html#medical-malpractice">Medical Malpractice</a>
+                        <a href="practice.html#construction-accidents">Construction Accidents</a>
+                        <a href="practice.html#wrongful-death">Wrongful Death</a>
+                    </div>
+                </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="case-results.html">Case Results</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li class="nav-dropdown">
+                    <a href="faq.html" class="nav-dropdown-trigger">
+                        FAQ
+                        <svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z"/></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="faq.html#case">Your Case & Claims</a>
+                        <a href="faq.html#fees">Fees & Costs</a>
+                        <a href="faq.html#process">The Legal Process</a>
+                        <a href="faq.html#practice">Practice Areas</a>
+                        <a href="faq.html#why">Why Choose Lion Law</a>
+                    </div>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -1924,6 +2197,7 @@
                 <li><a href="case-results.html">Case Results</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -1962,7 +2236,7 @@
                 </div>
                 <h1 class="hero-title">
                     Injured? <br>
-                    We Fight For <span class="accent">Maximum</span> Compensation
+                    We Fight For <span class="accent">Maximum</span> <span class="accent">Compensation</span>
                 </h1>
                 <p class="hero-subtitle">
                     When you've been wronged, you deserve more than just representation. You deserve a team that fights with the strength of a lion and the precision of master strategists.
@@ -1999,16 +2273,56 @@
 
                     <div class="form-group">
                         <label class="form-label" for="case-type">Type of Case</label>
-                        <select id="case-type" class="form-select" required>
-                            <option value="">Select your case type...</option>
-                            <option value="auto">Auto Accident</option>
-                            <option value="truck">Truck Accident</option>
-                            <option value="motorcycle">Motorcycle Accident</option>
-                            <option value="workplace">Workplace Injury</option>
-                            <option value="medical">Medical Malpractice</option>
-                            <option value="premises">Slip & Fall / Premises</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <div class="custom-select" data-placeholder="Select your case type...">
+                            <select id="case-type" class="form-select" required>
+                                <option value="">Select your case type...</option>
+                                <option value="auto">Auto Accident</option>
+                                <option value="truck">Truck Accident</option>
+                                <option value="motorcycle">Motorcycle Accident</option>
+                                <option value="workplace">Workplace Injury</option>
+                                <option value="medical">Medical Malpractice</option>
+                                <option value="premises">Slip & Fall / Premises</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="custom-select-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="placeholder">Select your case type...</span>
+                                <div class="custom-select-arrow">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 10l5 5 5-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="custom-select-options" role="listbox">
+                                <div class="custom-select-option" data-value="auto" role="option">
+                                    <span>Auto Accident</span>
+                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                </div>
+                                <div class="custom-select-option" data-value="truck" role="option">
+                                    <span>Truck Accident</span>
+                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                </div>
+                                <div class="custom-select-option" data-value="motorcycle" role="option">
+                                    <span>Motorcycle Accident</span>
+                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                </div>
+                                <div class="custom-select-option" data-value="workplace" role="option">
+                                    <span>Workplace Injury</span>
+                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                </div>
+                                <div class="custom-select-option" data-value="medical" role="option">
+                                    <span>Medical Malpractice</span>
+                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                </div>
+                                <div class="custom-select-option" data-value="premises" role="option">
+                                    <span>Slip & Fall / Premises</span>
+                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                </div>
+                                <div class="custom-select-option" data-value="other" role="option">
+                                    <span>Other</span>
+                                    <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -2387,6 +2701,7 @@
                         <li><a href="case-results.html">Case Results</a></li>
                         <li><a href="testimonials.html">Testimonials</a></li>
                         <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -2618,9 +2933,103 @@
                     btn.innerHTML = originalText;
                     btn.style.background = '';
                     form.reset();
+                    // Reset custom selects
+                    document.querySelectorAll('.custom-select').forEach(cs => {
+                        const trigger = cs.querySelector('.custom-select-trigger span:first-child');
+                        const placeholder = cs.dataset.placeholder;
+                        if (trigger && placeholder) {
+                            trigger.textContent = placeholder;
+                            trigger.classList.add('placeholder');
+                        }
+                        cs.querySelectorAll('.custom-select-option').forEach(opt => opt.classList.remove('selected'));
+                    });
                 }, 3000);
             });
         }
+
+        // ============================================
+        // CUSTOM SELECT DROPDOWNS
+        // ============================================
+        document.querySelectorAll('.custom-select').forEach(customSelect => {
+            const trigger = customSelect.querySelector('.custom-select-trigger');
+            const options = customSelect.querySelector('.custom-select-options');
+            const nativeSelect = customSelect.querySelector('.form-select');
+            const optionItems = customSelect.querySelectorAll('.custom-select-option');
+            const triggerText = trigger.querySelector('span:first-child');
+            const placeholder = customSelect.dataset.placeholder;
+
+            // Toggle dropdown on trigger click
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = customSelect.classList.contains('open');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.custom-select.open').forEach(cs => {
+                    if (cs !== customSelect) {
+                        cs.classList.remove('open');
+                        cs.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                customSelect.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', !isOpen);
+            });
+
+            // Handle option selection
+            optionItems.forEach(option => {
+                option.addEventListener('click', () => {
+                    const value = option.dataset.value;
+                    const text = option.querySelector('span:first-child').textContent;
+
+                    // Update native select
+                    nativeSelect.value = value;
+                    nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+
+                    // Update trigger text
+                    triggerText.textContent = text;
+                    triggerText.classList.remove('placeholder');
+
+                    // Update selected state
+                    optionItems.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+
+                    // Close dropdown
+                    customSelect.classList.remove('open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Keyboard navigation
+            trigger.addEventListener('keydown', (e) => {
+                const isOpen = customSelect.classList.contains('open');
+
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    trigger.click();
+                } else if (e.key === 'Escape' && isOpen) {
+                    customSelect.classList.remove('open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                } else if (e.key === 'ArrowDown' && isOpen) {
+                    e.preventDefault();
+                    const current = customSelect.querySelector('.custom-select-option.selected') || optionItems[0];
+                    const next = current.nextElementSibling || optionItems[0];
+                    if (next) next.click();
+                } else if (e.key === 'ArrowUp' && isOpen) {
+                    e.preventDefault();
+                    const current = customSelect.querySelector('.custom-select-option.selected') || optionItems[0];
+                    const prev = current.previousElementSibling || optionItems[optionItems.length - 1];
+                    if (prev) prev.click();
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.custom-select.open').forEach(cs => {
+                cs.classList.remove('open');
+                cs.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false');
+            });
+        });
 
         // ============================================
         // MOBILE MENU
@@ -2676,6 +3085,67 @@
                 closeMobileMenu();
             }
         });
+
+        // ============================================
+        // NAVIGATION DROPDOWN HOVER (Desktop Only)
+        // ============================================
+        (function() {
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            let hoverTimeout = null;
+            let closeTimeout = null;
+            const HOVER_DELAY = 100;
+            const CLOSE_DELAY = 150;
+
+            function isDesktop() {
+                return window.innerWidth > 768;
+            }
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => {
+                    if (!isDesktop()) return;
+                    clearTimeout(closeTimeout);
+                    hoverTimeout = setTimeout(() => {
+                        dropdown.classList.add('active');
+                    }, HOVER_DELAY);
+                });
+
+                dropdown.addEventListener('mouseleave', () => {
+                    if (!isDesktop()) return;
+                    clearTimeout(hoverTimeout);
+                    closeTimeout = setTimeout(() => {
+                        dropdown.classList.remove('active');
+                    }, CLOSE_DELAY);
+                });
+
+                const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+                if (trigger) {
+                    trigger.addEventListener('focus', () => {
+                        if (!isDesktop()) return;
+                        dropdown.classList.add('active');
+                    });
+                }
+
+                dropdown.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        dropdown.classList.remove('active');
+                        const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+                        if (trigger) trigger.focus();
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-dropdown')) {
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (!isDesktop()) {
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                }
+            });
+        })();
 
         // ============================================
         // CHAT BUTTON CLICK HANDLER
