@@ -505,6 +505,26 @@
         }
 
         /* ============================================
+           NAVIGATION DROPDOWNS (Desktop Only)
+           ============================================ */
+        @media (min-width: 769px) {
+            .nav-dropdown { position: relative; }
+            .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; }
+            .nav-dropdown-trigger .dropdown-arrow { width: 12px; height: 12px; fill: currentColor; transition: transform 0.3s var(--ease-out-quart); flex-shrink: 0; }
+            .nav-dropdown:hover .dropdown-arrow, .nav-dropdown.active .dropdown-arrow { transform: rotate(180deg); }
+            .nav-dropdown-menu { position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(-10px); min-width: 220px; background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.98)); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 8px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, transform 0.3s var(--ease-out-quart), visibility 0.3s; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 1000; }
+            .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.active .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+            .nav-dropdown-menu a { display: block; padding: 0.75rem 1.25rem; font-size: 0.85rem; font-weight: 500; color: var(--gray-light); white-space: nowrap; transition: all 0.2s ease; position: relative; }
+            .nav-dropdown-menu a::after { display: none; }
+            .nav-dropdown-menu a:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); padding-left: 1.5rem; }
+            .nav-dropdown::before { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 0.5rem; background: transparent; }
+        }
+        @media (max-width: 768px) {
+            .nav-dropdown-menu { display: none !important; }
+            .nav-dropdown-trigger .dropdown-arrow { display: none; }
+        }
+
+        /* ============================================
            PAGE HERO
            ============================================ */
         .page-hero {
@@ -1584,12 +1604,31 @@
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="practice.html">Practice Areas</a></li>
+                <li class="nav-dropdown">
+                    <a href="practice.html" class="nav-dropdown-trigger">Practice Areas<svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z"/></svg></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="practice.html#motor-vehicles">Motor Vehicle Accidents</a>
+                        <a href="practice.html#catastrophic-injuries">Catastrophic Injuries</a>
+                        <a href="practice.html#premises-liability">Slip & Fall / Premises</a>
+                        <a href="practice.html#medical-malpractice">Medical Malpractice</a>
+                        <a href="practice.html#construction-accidents">Construction Accidents</a>
+                        <a href="practice.html#wrongful-death">Wrongful Death</a>
+                    </div>
+                </li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="case-results.html">Case Results</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+                <li class="nav-dropdown">
+                    <a href="faq.html" class="nav-dropdown-trigger">FAQ<svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z"/></svg></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="faq.html#case">Your Case & Claims</a>
+                        <a href="faq.html#fees">Fees & Costs</a>
+                        <a href="faq.html#process">The Legal Process</a>
+                        <a href="faq.html#practice">Practice Areas</a>
+                        <a href="faq.html#why">Why Choose Lion Law</a>
+                    </div>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -2113,6 +2152,23 @@
                 closeMobileMenu();
             }
         });
+
+        // Navigation Dropdown Hover (Desktop Only)
+        (function() {
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            let hoverTimeout = null, closeTimeout = null;
+            const HOVER_DELAY = 100, CLOSE_DELAY = 150;
+            function isDesktop() { return window.innerWidth > 768; }
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => { if (!isDesktop()) return; clearTimeout(closeTimeout); hoverTimeout = setTimeout(() => { dropdown.classList.add('active'); }, HOVER_DELAY); });
+                dropdown.addEventListener('mouseleave', () => { if (!isDesktop()) return; clearTimeout(hoverTimeout); closeTimeout = setTimeout(() => { dropdown.classList.remove('active'); }, CLOSE_DELAY); });
+                const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+                if (trigger) { trigger.addEventListener('focus', () => { if (!isDesktop()) return; dropdown.classList.add('active'); }); }
+                dropdown.addEventListener('keydown', (e) => { if (e.key === 'Escape') { dropdown.classList.remove('active'); const t = dropdown.querySelector('.nav-dropdown-trigger'); if (t) t.focus(); } });
+            });
+            document.addEventListener('click', (e) => { if (!e.target.closest('.nav-dropdown')) { dropdowns.forEach(d => d.classList.remove('active')); } });
+            window.addEventListener('resize', () => { if (!isDesktop()) { dropdowns.forEach(d => d.classList.remove('active')); } });
+        })();
     </script>
 </body>
 </html>
