@@ -1351,6 +1351,7 @@
             padding: var(--section-padding) 0;
             background: var(--black);
             position: relative;
+            overflow: hidden;
         }
 
         .section-header {
@@ -1404,18 +1405,39 @@
             margin: 0 auto;
         }
 
-        .practice-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+        .practice-carousel {
+            position: relative;
+            padding: 0;
+        }
+
+        .practice-carousel-window {
+            overflow: hidden;
+        }
+
+        .practice-carousel-track {
+            --practice-gap: clamp(1rem, 3vw, 1.5rem);
+            --slides-per-view: 3;
+            display: flex;
+            gap: var(--practice-gap);
+            transition: transform 0.55s var(--ease-out-expo);
+            will-change: transform;
+            touch-action: pan-y;
+            padding: 0 0.25rem;
+        }
+
+        .practice-slide {
+            flex: 0 0 calc((100% - (var(--practice-gap) * (var(--slides-per-view) - 1))) / var(--slides-per-view));
         }
 
         .practice-card {
             background: linear-gradient(145deg, var(--charcoal), var(--charcoal-light));
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
+            padding: 2.25rem 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: all 0.4s var(--ease-out-quart);
             position: relative;
             overflow: hidden;
@@ -1440,10 +1462,16 @@
             opacity: 1;
         }
 
+        .practice-card-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 1.25rem;
+        }
+
         .practice-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 1.5rem;
+            width: 68px;
+            height: 68px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
             border-radius: 50%;
             display: flex;
@@ -1462,8 +1490,8 @@
         }
 
         .practice-icon svg {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             fill: var(--gold);
             position: relative;
             z-index: 1;
@@ -1471,31 +1499,32 @@
 
         .practice-card h3 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
         }
 
         .practice-card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--gray-light);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
 
         .practice-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--gold);
             letter-spacing: 0.03em;
-            transition: gap 0.3s ease;
+            transition: gap 0.3s ease, color 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .practice-link:hover {
             gap: 0.75rem;
+            color: var(--gold-light);
         }
 
         .practice-link svg {
@@ -1503,6 +1532,52 @@
             height: 16px;
             fill: currentColor;
         }
+
+        .practice-carousel-controls {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .practice-carousel-arrow {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .practice-carousel-arrow:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .practice-carousel-arrow:disabled {
+            opacity: 0.4;
+            border-color: rgba(212, 175, 55, 0.15);
+            color: var(--gray);
+            cursor: default;
+            transform: none;
+            box-shadow: none;
+            pointer-events: none;
+        }
+
+        .practice-carousel-arrow svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
 
         /* ============================================
            WHY CHOOSE US SECTION
@@ -2132,8 +2207,8 @@
                 flex-wrap: wrap;
             }
 
-            .practice-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .practice-carousel-track {
+                --slides-per-view: 2;
             }
 
             .results-grid {
@@ -2245,8 +2320,8 @@
                 font-size: 1.5rem;
             }
 
-            .practice-grid {
-                grid-template-columns: 1fr;
+            .practice-carousel-track {
+                --slides-per-view: 1;
             }
 
             .results-grid {
@@ -2547,70 +2622,143 @@
                 <p class="section-subtitle">We specialize in fighting for victims across a wide range of personal injury cases.</p>
             </header>
 
-            <div class="practice-grid">
-                <article class="practice-card">
-                    <div class="practice-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
-                        </svg>
-                    </div>
-                    <h3>Auto Accidents</h3>
-                    <p>Car crashes, truck collisions, motorcycle injuries, and rideshare accidents. We fight for maximum compensation.</p>
-                    <a href="#" class="practice-link">
-                        Learn More
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
+            <div class="practice-carousel" aria-live="polite">
+                <div class="practice-carousel-window">
+                    <div class="practice-carousel-track">
+                        <article class="practice-card practice-slide" data-anchor="motor-vehicles">
+                            <div class="practice-card-inner">
+                                <div class="practice-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Motor Vehicle Accidents</h3>
+                                    <p>Car, truck, motorcycle, pedestrian, and rideshare crashes with rapid investigation to prove fault and maximize recovery.</p>
+                                </div>
+                                <a href="practice.html#motor-vehicles" class="practice-link">
+                                    Learn More
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
 
-                <article class="practice-card">
-                    <div class="practice-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
-                        </svg>
-                    </div>
-                    <h3>Workplace Injuries</h3>
-                    <p>Construction accidents, industrial injuries, OSHA violations, and workers' compensation claims.</p>
-                    <a href="#" class="practice-link">
-                        Learn More
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
+                        <article class="practice-card practice-slide" data-anchor="catastrophic-injuries">
+                            <div class="practice-card-inner">
+                                <div class="practice-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Catastrophic Injuries</h3>
+                                    <p>TBI, spinal cord damage, amputations, and severe burns backed by life-care planning and aggressive negotiations.</p>
+                                </div>
+                                <a href="practice.html#catastrophic-injuries" class="practice-link">
+                                    Learn More
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
 
-                <article class="practice-card">
-                    <div class="practice-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
-                        </svg>
-                    </div>
-                    <h3>Medical Malpractice</h3>
-                    <p>Hospital negligence, surgical errors, misdiagnosis, birth injuries, and pharmaceutical liability.</p>
-                    <a href="#" class="practice-link">
-                        Learn More
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
+                        <article class="practice-card practice-slide" data-anchor="premises-liability">
+                            <div class="practice-card-inner">
+                                <div class="practice-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 8.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Slip &amp; Fall / Premises</h3>
+                                    <p>Unsafe floors, poor lighting, negligent security, and dog bites—holding property owners accountable for preventable harm.</p>
+                                </div>
+                                <a href="practice.html#premises-liability" class="practice-link">
+                                    Learn More
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
 
-                <article class="practice-card">
-                    <div class="practice-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 8.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-                        </svg>
+                        <article class="practice-card practice-slide" data-anchor="medical-malpractice">
+                            <div class="practice-card-inner">
+                                <div class="practice-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Medical Malpractice</h3>
+                                    <p>Surgical errors, misdiagnosis, birth injuries, and hospital negligence when providers break the standard of care.</p>
+                                </div>
+                                <a href="practice.html#medical-malpractice" class="practice-link">
+                                    Learn More
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="practice-card practice-slide" data-anchor="construction-accidents">
+                            <div class="practice-card-inner">
+                                <div class="practice-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Construction Accidents</h3>
+                                    <p>Scaffolding and ladder falls, falling objects, and heavy machinery injuries with coordinated comp and third-party claims.</p>
+                                </div>
+                                <a href="practice.html#construction-accidents" class="practice-link">
+                                    Learn More
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="practice-card practice-slide" data-anchor="wrongful-death">
+                            <div class="practice-card-inner">
+                                <div class="practice-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Wrongful Death &amp; Work Injuries</h3>
+                                    <p>Compassionate counsel for families and injured workers, pursuing survivor benefits and full financial accountability.</p>
+                                </div>
+                                <a href="practice.html#wrongful-death" class="practice-link">
+                                    Learn More
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
                     </div>
-                    <h3>Premises Liability</h3>
-                    <p>Slip and fall accidents, unsafe property conditions, negligent security, and dog bite injuries.</p>
-                    <a href="#" class="practice-link">
-                        Learn More
+                </div>
+
+                <div class="practice-carousel-controls">
+                    <button class="practice-carousel-arrow prev" type="button" aria-label="Previous practice area">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                            <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                         </svg>
-                    </a>
-                </article>
+                    </button>
+                    <button class="practice-carousel-arrow next" type="button" aria-label="Next practice area">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -3155,7 +3303,7 @@
         // ============================================
         // INTERSECTION OBSERVER FOR ANIMATIONS
         // ============================================
-        const fadeElements = document.querySelectorAll('.practice-card, .feature-item, .result-card, .testimonial-card');
+        const fadeElements = document.querySelectorAll('.practice-card:not(.clone), .feature-item, .result-card, .testimonial-card');
 
         const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -3172,6 +3320,191 @@
             element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             fadeObserver.observe(element);
         });
+
+        // ============================================
+        // PRACTICE AREAS CAROUSEL
+        // ============================================
+        (function() {
+            const carousel = document.querySelector('.practice-carousel');
+            if (!carousel) return;
+
+            const track = carousel.querySelector('.practice-carousel-track');
+            const prevBtn = carousel.querySelector('.practice-carousel-arrow.prev');
+            const nextBtn = carousel.querySelector('.practice-carousel-arrow.next');
+
+            let slides = Array.from(track.querySelectorAll('.practice-slide')).filter(slide => !slide.classList.contains('clone'));
+            let slidesPerView = 1;
+            let stepSize = 0;
+            let currentIndex = 0;
+            let resizeTimer = null;
+
+            const calculateSlidesPerView = () => {
+                if (window.innerWidth < 640) return 1;
+                if (window.innerWidth < 1024) return 2;
+                return 3;
+            };
+
+            const updateSlides = () => {
+                slides = Array.from(track.querySelectorAll('.practice-slide'));
+            };
+
+            const updateMeasurements = () => {
+                slidesPerView = calculateSlidesPerView();
+                track.style.setProperty('--slides-per-view', slidesPerView);
+
+                if (slides.length >= 2) {
+                    const firstRect = slides[0].getBoundingClientRect();
+                    const secondRect = slides[1].getBoundingClientRect();
+                    stepSize = Math.abs(secondRect.left - firstRect.left);
+                } else if (slides.length === 1) {
+                    stepSize = slides[0].getBoundingClientRect().width;
+                } else {
+                    const windowEl = carousel.querySelector('.practice-carousel-window');
+                    const windowWidth = windowEl ? windowEl.clientWidth : 0;
+                    stepSize = windowWidth && slidesPerView ? windowWidth / slidesPerView : 0;
+                }
+            };
+
+            const getTranslateX = () => stepSize * currentIndex;
+
+            const setPosition = (animate = true) => {
+                track.style.transition = animate ? 'transform 0.55s var(--ease-out-expo)' : 'none';
+                const value = `translateX(-${getTranslateX()}px)`;
+                if (animate) {
+                    track.style.transform = value;
+                } else {
+                    requestAnimationFrame(() => {
+                        track.style.transform = value;
+                    });
+                }
+            };
+
+            const updateArrows = () => {
+                const maxIndex = Math.max(0, slides.length - slidesPerView);
+                if (prevBtn) prevBtn.disabled = currentIndex <= 0;
+                if (nextBtn) nextBtn.disabled = currentIndex >= maxIndex;
+            };
+
+            const goToNext = () => {
+                if (isTransitioning) return;
+                const maxIndex = Math.max(0, slides.length - slidesPerView);
+                if (currentIndex >= maxIndex) return;
+                isTransitioning = true;
+                currentIndex += 1;
+                setPosition(true);
+            };
+
+            const goToPrev = () => {
+                if (isTransitioning) return;
+                if (currentIndex <= 0) return;
+                isTransitioning = true;
+                currentIndex -= 1;
+                setPosition(true);
+            };
+
+            const handleTransitionEnd = () => {
+                isTransitioning = false;
+                updateArrows();
+            };
+
+            const rebuild = () => {
+                updateSlides();
+                slidesPerView = calculateSlidesPerView();
+                track.style.setProperty('--slides-per-view', slidesPerView);
+                currentIndex = Math.max(0, Math.min(currentIndex, Math.max(0, slides.length - slidesPerView)));
+                updateMeasurements();
+                setPosition(false);
+                // Force reflow before re-enabling transition to avoid flicker
+                void track.offsetWidth;
+                track.style.transition = 'transform 0.55s var(--ease-out-expo)';
+                updateArrows();
+                isTransitioning = false;
+            };
+
+            const onResize = () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    rebuild();
+                }, 150);
+            };
+
+            let pointerId = null;
+            let startX = 0;
+            let deltaX = 0;
+            let swipeMoved = false;
+
+            const onPointerDown = (e) => {
+                if (e.pointerType === 'mouse') return;
+                pointerId = e.pointerId;
+                startX = e.clientX;
+                deltaX = 0;
+                swipeMoved = false;
+                track.setPointerCapture?.(pointerId);
+            };
+
+            const onPointerMove = (e) => {
+                if (pointerId !== e.pointerId) return;
+                deltaX = e.clientX - startX;
+                if (Math.abs(deltaX) > 10) swipeMoved = true;
+            };
+
+            const onPointerUp = (e) => {
+                if (pointerId !== e.pointerId) return;
+                if (Math.abs(deltaX) > 45) {
+                    deltaX < 0 ? goToNext() : goToPrev();
+                }
+                pointerId = null;
+                deltaX = 0;
+                track.releasePointerCapture?.(e.pointerId);
+                setTimeout(() => { swipeMoved = false; }, 0);
+            };
+
+            // Touch fallback to ensure swipe works on devices without pointer events enabled
+            let touchStartX = null;
+            track.addEventListener('touchstart', (e) => {
+                if (e.touches.length !== 1) return;
+                touchStartX = e.touches[0].clientX;
+                swipeMoved = false;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', (e) => {
+                if (touchStartX === null) return;
+                const dx = e.touches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 10) swipeMoved = true;
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                if (touchStartX === null) return;
+                const dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 45) {
+                    dx < 0 ? goToNext() : goToPrev();
+                }
+                touchStartX = null;
+                setTimeout(() => { swipeMoved = false; }, 0);
+            });
+
+            // Prevent accidental link navigation after swipe
+            track.addEventListener('click', (e) => {
+                if (swipeMoved) {
+                    e.preventDefault();
+                    swipeMoved = false;
+                }
+            }, true);
+
+            rebuild();
+
+            nextBtn?.addEventListener('click', goToNext);
+            prevBtn?.addEventListener('click', goToPrev);
+            track.addEventListener('transitionend', handleTransitionEnd);
+            track.addEventListener('pointerdown', onPointerDown);
+            track.addEventListener('pointermove', onPointerMove);
+            track.addEventListener('pointerup', onPointerUp);
+            track.addEventListener('pointercancel', onPointerUp);
+            track.addEventListener('pointerleave', (e) => {
+                if (pointerId === e.pointerId) onPointerUp(e);
+            });
+            window.addEventListener('resize', onResize);
+        })();
 
         // ============================================
         // FORM HANDLING
