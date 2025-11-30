@@ -1286,6 +1286,10 @@
         .modal-subtitle { color: var(--gray-light); font-size: 1rem; margin-bottom: 2rem; }
         .modal-form .btn { width: 100%; padding: 1.125rem; font-size: 0.95rem; margin-top: 0.5rem; }
         body.modal-open { overflow: hidden; }
+        @media (max-width: 768px) {
+            .modal-card { padding: 1.75rem; }
+            .modal-title { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -1804,15 +1808,20 @@
         });
         document.addEventListener('click', () => { document.querySelectorAll('.custom-select.open').forEach(cs => { cs.classList.remove('open'); cs.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false'); }); });
 
-        // Consultation Modal
+        // ============================================
+        // CONSULTATION MODAL
+        // ============================================
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('consultationModal');
             const openBtns = document.querySelectorAll('.open-consultation-modal');
             const closeBtn = document.getElementById('closeConsultationModal');
+
             if (!modal || !closeBtn) return;
+
             function openModal() {
                 modal.classList.add('active');
                 document.body.classList.add('modal-open');
+                // Close mobile menu if open
                 const mobileMenu = document.getElementById('mobileMenu');
                 if (mobileMenu && mobileMenu.classList.contains('active')) {
                     mobileMenu.classList.remove('active');
@@ -1820,25 +1829,54 @@
                     document.querySelector('.nav-toggle')?.classList.remove('active');
                     document.body.classList.remove('menu-open');
                 }
-                setTimeout(() => { const firstInput = modal.querySelector('input'); if (firstInput) firstInput.focus(); }, 100);
+                // Focus first input
+                setTimeout(() => {
+                    const firstInput = modal.querySelector('input');
+                    if (firstInput) firstInput.focus();
+                }, 100);
             }
-            function closeModal() { modal.classList.remove('active'); document.body.classList.remove('modal-open'); }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            }
+
             openBtns.forEach(btn => btn.addEventListener('click', openModal));
             closeBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+
+            // Close on overlay click (not card)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            // Form submission
             const form = document.getElementById('consultationForm');
             if (form) {
                 form.addEventListener('submit', (e) => {
                     e.preventDefault();
+                    // Show success feedback
                     const btn = form.querySelector('.btn');
                     const originalText = btn.innerHTML;
                     btn.innerHTML = '<span>Thank You! We\'ll Be In Touch.</span>';
                     btn.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
-                    setTimeout(() => { closeModal(); form.reset(); btn.innerHTML = originalText; btn.style.background = ''; }, 2500);
+                    setTimeout(() => {
+                        closeModal();
+                        form.reset();
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 2500);
                 });
             }
-        })();
+        });
     </script>
 
     <!-- Consultation Modal -->
