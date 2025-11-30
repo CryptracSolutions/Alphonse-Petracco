@@ -772,6 +772,116 @@
             padding: 1.125rem 2.5rem;
         }
 
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0 4rem;
+        }
+
+        .pagination-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            color: var(--gold);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-quart);
+        }
+
+        .pagination-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+        }
+
+        .pagination-btn:hover:not(:disabled) .pagination-arrow-prev {
+            transform: translateX(-3px);
+        }
+
+        .pagination-btn:hover:not(:disabled) .pagination-arrow-next {
+            transform: translateX(3px);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .pagination-numbers {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .pagination-number {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--cream);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-quart);
+        }
+
+        .pagination-number:hover:not(.active) {
+            border-color: rgba(212, 175, 55, 0.5);
+            color: var(--gold);
+        }
+
+        .pagination-number.active {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border-color: var(--gold);
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .pagination {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+
+            .pagination-btn {
+                padding: 0.625rem 1rem;
+            }
+
+            .pagination-btn span {
+                display: none;
+            }
+
+            .pagination-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .pagination-number {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+        }
+
         /* ============================================
            NO WIN NO FEE SECTION
            ============================================ */
@@ -1525,6 +1635,173 @@
                     <span class="result-type">Wrongful Death</span>
                     <p class="result-description">Compassionate representation for a family who lost a loved one in a preventable workplace incident.</p>
                 </article>
+
+                <!-- Page 2 -->
+                <article class="result-card featured">
+                    <div class="result-amount">$3.2M</div>
+                    <span class="result-type">Car Accident</span>
+                    <p class="result-description">Multi-vehicle collision case resulting in traumatic brain injury requiring lifetime care and rehabilitation.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$2.1M</div>
+                    <span class="result-type">Pedestrian Accident</span>
+                    <p class="result-description">Recovery for a pedestrian struck in a crosswalk by a driver who ran a red light.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$1.9M</div>
+                    <span class="result-type">Product Liability</span>
+                    <p class="result-description">Settlement against a manufacturer for defective machinery that caused severe hand injuries.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$1.6M</div>
+                    <span class="result-type">Nursing Home Abuse</span>
+                    <p class="result-description">Justice for an elderly patient who suffered neglect and bedsores at a care facility.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$1.4M</div>
+                    <span class="result-type">Truck Accident</span>
+                    <p class="result-description">Settlement for a family injured when an overloaded commercial truck lost control on the highway.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$1.1M</div>
+                    <span class="result-type">Medical Malpractice</span>
+                    <p class="result-description">Verdict for delayed cancer diagnosis that significantly impacted treatment options.</p>
+                </article>
+
+                <!-- Page 3 -->
+                <article class="result-card featured">
+                    <div class="result-amount">$975K</div>
+                    <span class="result-type">Workplace Injury</span>
+                    <p class="result-description">Recovery for a warehouse worker who suffered a back injury due to inadequate safety equipment.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$875K</div>
+                    <span class="result-type">Dog Bite</span>
+                    <p class="result-description">Settlement for a child who suffered facial scarring from an unprovoked dog attack.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$825K</div>
+                    <span class="result-type">Slip & Fall</span>
+                    <p class="result-description">Recovery for a grocery store customer who slipped on an unmarked wet floor.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$780K</div>
+                    <span class="result-type">Car Accident</span>
+                    <p class="result-description">Settlement for rear-end collision victim suffering chronic neck and back pain.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$725K</div>
+                    <span class="result-type">Construction Accident</span>
+                    <p class="result-description">Recovery for an electrician injured by faulty wiring at a construction site.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$680K</div>
+                    <span class="result-type">Motorcycle Accident</span>
+                    <p class="result-description">Settlement for a rider who suffered multiple fractures when a car made an illegal turn.</p>
+                </article>
+
+                <!-- Page 4 -->
+                <article class="result-card featured">
+                    <div class="result-amount">$625K</div>
+                    <span class="result-type">Pedestrian Accident</span>
+                    <p class="result-description">Recovery for a jogger struck by a vehicle backing out of a parking lot without looking.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$595K</div>
+                    <span class="result-type">Medical Malpractice</span>
+                    <p class="result-description">Settlement for a patient who received incorrect medication dosage causing organ damage.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$550K</div>
+                    <span class="result-type">Wrongful Death</span>
+                    <p class="result-description">Recovery for a family after their loved one was killed by a drunk driver.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$485K</div>
+                    <span class="result-type">Product Liability</span>
+                    <p class="result-description">Settlement for burns caused by a defective household appliance that overheated.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$450K</div>
+                    <span class="result-type">Nursing Home Abuse</span>
+                    <p class="result-description">Justice for a resident who suffered from medication errors and inadequate supervision.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$425K</div>
+                    <span class="result-type">Truck Accident</span>
+                    <p class="result-description">Settlement for injuries sustained when a delivery truck failed to yield at an intersection.</p>
+                </article>
+
+                <!-- Page 5 -->
+                <article class="result-card featured">
+                    <div class="result-amount">$395K</div>
+                    <span class="result-type">Slip & Fall</span>
+                    <p class="result-description">Recovery for a hotel guest who fell on a poorly maintained staircase.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$365K</div>
+                    <span class="result-type">Dog Bite</span>
+                    <p class="result-description">Settlement for nerve damage sustained in an attack by a neighbor's aggressive dog.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$325K</div>
+                    <span class="result-type">Car Accident</span>
+                    <p class="result-description">Recovery for a rideshare passenger injured in a collision caused by driver negligence.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$295K</div>
+                    <span class="result-type">Workplace Injury</span>
+                    <p class="result-description">Settlement for repetitive stress injuries caused by inadequate ergonomic equipment.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$250K</div>
+                    <span class="result-type">Construction Accident</span>
+                    <p class="result-description">Recovery for a laborer struck by falling debris at a renovation project.</p>
+                </article>
+
+                <article class="result-card featured">
+                    <div class="result-amount">$185K</div>
+                    <span class="result-type">Motorcycle Accident</span>
+                    <p class="result-description">Settlement for road rash and soft tissue injuries from a lane-change collision.</p>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button class="pagination-btn pagination-prev" id="prevBtn" aria-label="Previous page">
+                    <svg class="pagination-arrow-prev" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Prev</span>
+                </button>
+                <div class="pagination-numbers" id="paginationNumbers">
+                    <!-- Page numbers inserted by JavaScript -->
+                </div>
+                <button class="pagination-btn pagination-next" id="nextBtn" aria-label="Next page">
+                    <span>Next</span>
+                    <svg class="pagination-arrow-next" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                    </svg>
+                </button>
             </div>
 
             <div class="results-cta">
@@ -1701,6 +1978,110 @@
     </footer>
 
     <script>
+        // ============================================
+        // PAGINATION FOR RESULTS
+        // ============================================
+        (function() {
+            const CARDS_PER_PAGE = 6;
+            let currentPage = 1;
+
+            const resultsGrid = document.querySelector('.results-grid');
+            const allCards = Array.from(resultsGrid.querySelectorAll('.result-card'));
+            const totalPages = Math.ceil(allCards.length / CARDS_PER_PAGE);
+
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const paginationNumbers = document.getElementById('paginationNumbers');
+
+            // Initialize
+            function init() {
+                renderPageNumbers();
+                showPage(1);
+            }
+
+            // Render page number buttons
+            function renderPageNumbers() {
+                paginationNumbers.innerHTML = '';
+                for (let i = 1; i <= totalPages; i++) {
+                    const btn = document.createElement('button');
+                    btn.className = 'pagination-number' + (i === 1 ? ' active' : '');
+                    btn.textContent = i;
+                    btn.setAttribute('aria-label', `Go to page ${i}`);
+                    btn.addEventListener('click', () => showPage(i));
+                    paginationNumbers.appendChild(btn);
+                }
+            }
+
+            // Show specific page
+            function showPage(page) {
+                currentPage = page;
+                const start = (page - 1) * CARDS_PER_PAGE;
+                const end = start + CARDS_PER_PAGE;
+
+                // Show/hide cards
+                allCards.forEach((card, index) => {
+                    if (index >= start && index < end) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update pagination UI
+                updatePaginationUI();
+
+                // Scroll to results section (only if not initial load)
+                if (page !== 1 || document.readyState === 'complete') {
+                    const resultsSection = document.querySelector('.results-section');
+                    const headerOffset = 120;
+                    const elementPosition = resultsSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // Update button states and active page
+            function updatePaginationUI() {
+                // Update prev/next buttons
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === totalPages;
+
+                // Update page number buttons
+                const pageButtons = paginationNumbers.querySelectorAll('.pagination-number');
+                pageButtons.forEach((btn, index) => {
+                    if (index + 1 === currentPage) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+
+            // Event listeners
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    showPage(currentPage - 1);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    showPage(currentPage + 1);
+                }
+            });
+
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+
         // Navigation scroll effect
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
