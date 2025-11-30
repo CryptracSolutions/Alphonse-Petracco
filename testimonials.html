@@ -1625,7 +1625,7 @@
         // ============================================
         // CONSULTATION MODAL
         // ============================================
-        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('consultationModal');
             const openBtns = document.querySelectorAll('.open-consultation-modal');
             const closeBtn = document.getElementById('closeConsultationModal');
@@ -1690,7 +1690,7 @@
                     }, 2500);
                 });
             }
-        })();
+        });
     </script>
 
     <!-- AI Chatbot -->
