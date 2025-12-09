@@ -1088,21 +1088,21 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="modal-name">Full Name</label>
-                        <input type="text" id="modal-name" class="form-input" placeholder="John Smith" required>
+                        <input type="text" id="modal-name" name="name" class="form-input" placeholder="John Smith" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modal-phone">Phone Number</label>
-                        <input type="tel" id="modal-phone" class="form-input" placeholder="(973) 314-9767" required>
+                        <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="(973) 314-9767" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="modal-email">Email Address</label>
-                    <input type="email" id="modal-email" class="form-input" placeholder="john@example.com" required>
+                    <input type="email" id="modal-email" name="email" class="form-input" placeholder="john@example.com" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="modal-case-type">Type of Case</label>
                     <div class="custom-select" data-placeholder="Select your case type...">
-                        <select id="modal-case-type" class="form-select" required>
+                        <select id="modal-case-type" name="case_type" class="form-select" required>
                             <option value="">Select your case type...</option>
                             <option value="auto">Auto Accident</option>
                             <option value="truck">Truck Accident</option>
@@ -1129,7 +1129,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="modal-message">Brief Description</label>
-                    <textarea id="modal-message" class="form-textarea" placeholder="Tell us what happened..."></textarea>
+                    <textarea id="modal-message" name="message" class="form-textarea" placeholder="Tell us what happened..."></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary"><span>Get My Free Consultation</span></button>
                 <p class="form-disclaimer">By submitting, you agree to our Privacy Policy. Your information is secure and confidential.</p>
