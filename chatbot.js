@@ -731,6 +731,9 @@
       this.messages = [];
       this.isOpen = false;
       this.isLoading = false;
+      this.userMessageCount = 0;
+      this.contactAsked = false;
+      this.contactCollected = false;
 
       this.init();
     }
@@ -847,9 +850,69 @@
       return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     }
 
+    detectEmail(text) {
+      const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+      const match = text.match(emailRegex);
+      return match ? match[0] : null;
+    }
+
+    detectPhone(text) {
+      // Match common US phone formats: (123) 456-7890, 123-456-7890, 123.456.7890, 1234567890, +1 123 456 7890
+      const phoneRegex = /(?:\+?1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}/;
+      const match = text.match(phoneRegex);
+      if (match) {
+        // Clean up the phone number - extract just digits
+        const digits = match[0].replace(/\D/g, '');
+        // Must have at least 10 digits to be a valid US phone
+        if (digits.length >= 10) {
+          return match[0];
+        }
+      }
+      return null;
+    }
+
+    async submitContactToFormspree(contactInfo) {
+      const conversationSummary = this.messages
+        .slice(0, -1) // Exclude the contact info message itself
+        .map(m => `${m.sender}: ${m.text}`)
+        .join('\n');
+
+      const formData = new FormData();
+      if (contactInfo.email) {
+        formData.append('email', contactInfo.email);
+      }
+      if (contactInfo.phone) {
+        formData.append('phone', contactInfo.phone);
+      }
+      formData.append('source', 'chatbot');
+      formData.append('page', window.location.pathname);
+      formData.append('conversation', conversationSummary);
+
+      try {
+        await fetch('https://formspree.io/f/mdkqlqyw', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        this.contactCollected = true;
+      } catch (error) {
+        console.error('Error submitting contact to Formspree:', error);
+      }
+    }
+
     async sendMessage() {
       const text = this.input.value.trim();
       if (!text || this.isLoading) return;
+
+      // Track user message count
+      this.userMessageCount++;
+
+      // Check if user provided contact info (email or phone)
+      const detectedEmail = this.detectEmail(text);
+      const detectedPhone = this.detectPhone(text);
+      if ((detectedEmail || detectedPhone) && !this.contactCollected) {
+        this.submitContactToFormspree({ email: detectedEmail, phone: detectedPhone });
+      }
 
       // Add user message
       this.addMessage(text, 'user');
@@ -863,6 +926,12 @@
       try {
         // Build context based on user query
         const context = await buildContext(text);
+
+        // Determine if we should ask for contact info (after 2 messages, not yet asked, not yet collected)
+        const shouldAskForContact = this.userMessageCount >= 2 && !this.contactAsked && !this.contactCollected;
+        if (shouldAskForContact) {
+          this.contactAsked = true;
+        }
 
         // Prepare messages for API
         const apiMessages = this.messages
@@ -881,7 +950,8 @@
           },
           body: JSON.stringify({
             messages: apiMessages,
-            context: context
+            context: context,
+            askForContact: shouldAskForContact
           }),
         });
 

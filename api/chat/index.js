@@ -21,7 +21,7 @@ export default async function handler(req) {
   }
 
   try {
-    const { messages, context } = await req.json();
+    const { messages, context, askForContact } = await req.json();
 
     if (!messages || !Array.isArray(messages)) {
       return new Response(JSON.stringify({ error: 'Messages array is required' }), {
@@ -30,7 +30,7 @@ export default async function handler(req) {
       });
     }
 
-    const systemPrompt = `You are a helpful legal assistant for Lion Law, a premier personal injury law firm led by Alphonse Petracco.
+    let systemPrompt = `You are a helpful legal assistant for Lion Law, a premier personal injury law firm led by Alphonse Petracco.
 
 WEBSITE CONTENT FOR REFERENCE:
 ${context || 'No additional context provided.'}
@@ -49,6 +49,13 @@ GUIDELINES:
 EXAMPLE RESPONSES:
 - For consultation requests: "I'd be happy to help you connect with our team for a free consultation. You can reach us through our contact page at /contact.html or call us directly. Would you like me to tell you what to expect during your consultation?"
 - For case questions: "Based on what you've described, this sounds like it could be a [type] case. However, every situation is unique, and I'd recommend speaking directly with one of our attorneys who can evaluate your specific circumstances. Would you like to schedule a free consultation?"`;
+
+    // Add contact request to system prompt if flagged
+    if (askForContact) {
+      systemPrompt += `
+
+IMPORTANT: At the end of your response, naturally ask the user for their contact information so someone from our team can follow up with them. Ask for their email address or phone number - whichever they prefer. Be warm, helpful, and not pushy. For example: "Would you like me to have someone from our team reach out to you? If so, what's the best email or phone number to contact you at?"`;
+    }
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
