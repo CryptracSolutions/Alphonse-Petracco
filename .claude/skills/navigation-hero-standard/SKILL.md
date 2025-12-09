@@ -13,7 +13,7 @@ description: Gold standard navigation, mobile menu, lawyer banner, and falling m
 
 ```html
 <!-- Lawyer Answers Every Call Banner -->
-<a href="tel:9733149767" class="lawyer-banner">
+<a href="tel:9738684343" class="lawyer-banner">
     <div class="container lawyer-banner-inner">
         <svg class="lawyer-banner-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -75,11 +75,11 @@ description: Gold standard navigation, mobile menu, lawyer banner, and falling m
         </ul>
 
         <div class="nav-right">
-            <a href="tel:9733149767" class="nav-phone">
+            <a href="tel:9738684343" class="nav-phone">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
-                (973) 314-9767
+                (973) 868-4343
             </a>
             <button type="button" class="btn btn-primary open-consultation-modal"><span>Free Consultation</span></button>
         </div>
@@ -92,7 +92,7 @@ description: Gold standard navigation, mobile menu, lawyer banner, and falling m
     </div>
     </div>
     <!-- Lawyer Answers Every Call Banner -->
-    <a href="tel:9733149767" class="lawyer-banner">
+    <a href="tel:9738684343" class="lawyer-banner">
         <div class="container lawyer-banner-inner">
             <svg class="lawyer-banner-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -139,9 +139,9 @@ description: Gold standard navigation, mobile menu, lawyer banner, and falling m
     </nav>
     <div class="mobile-menu-footer">
         <button type="button" class="mobile-menu-cta open-consultation-modal">Free Consultation</button>
-        <a href="tel:9733149767" class="mobile-menu-phone">
+        <a href="tel:9738684343" class="mobile-menu-phone">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            (973) 314-9767
+            (973) 868-4343
         </a>
     </div>
 </div>
