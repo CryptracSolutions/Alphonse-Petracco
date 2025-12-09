@@ -37,7 +37,7 @@ No build, lint, or test commands exist - changes appear immediately on browser r
 | `practice.html` | Practice area categories |
 | `case-results.html` | Case results, verdicts and settlements |
 | `blog.html` | Blog listing |
-| `blog-single.html` | Individual blog post template |
+| `blog-truck-accident-verdict.html` | $1.8M truck accident verdict case result |
 | `contact.html` | Contact form, consultation request |
 | `faq.html` | FAQ with accordion, search, category tabs, deep linking |
 | `testimonials.html` | Client testimonials showcase |
