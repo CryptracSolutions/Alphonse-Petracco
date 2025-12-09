@@ -211,8 +211,8 @@
         .blog-card:hover { transform: translateY(-8px); border-color: rgba(212, 175, 55, 0.3); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(212, 175, 55, 0.08); }
 
         .blog-card-image { height: 200px; position: relative; overflow: hidden; }
-        .blog-card-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--charcoal-light) 0%, var(--charcoal) 100%); }
-        .blog-card-image::after { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='%23D4AF37' fill-opacity='0.08'/%3E%3C/svg%3E"); background-size: 30px 30px; }
+        .blog-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out-quart); }
+        .blog-card:hover .blog-card-image img { transform: scale(1.05); }
         .blog-card-image .category { position: absolute; top: 1rem; left: 1rem; z-index: 1; padding: 0.4rem 0.75rem; background: linear-gradient(135deg, var(--gold), var(--gold-deep)); color: var(--black); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border-radius: 4px; }
         .blog-card-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .blog-card-icon svg { width: 28px; height: 28px; fill: var(--gold); }
@@ -526,17 +526,15 @@
                 <!-- Featured Post -->
                 <article class="blog-card featured">
                     <div class="blog-card-image">
-                        <span class="category">Case Result</span>
-                        <div class="blog-card-icon">
-                            <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
-                        </div>
+                        <img src="images/blog/car_accident_rights.png" alt="Person reviewing documents with a lawyer" width="800" height="500">
+                        <span class="category">Auto Accidents</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>Nov 15, 2024</span>
                         </div>
-                        <h3 class="blog-card-title">$2.5 Million Settlement for Car Accident Victim</h3>
-                        <p class="blog-card-excerpt">Our client suffered severe spinal injuries in a collision caused by a distracted driver. After extensive negotiations, we secured a settlement covering medical costs, lost wages, and pain and suffering.</p>
+                        <h3 class="blog-card-title">Understanding Your Rights After a Car Accident</h3>
+                        <p class="blog-card-excerpt">A serious car accident can change your life in an instant. Learn about your legal rights and the steps you need to take to secure fair compensation.</p>
                         <a href="blog-car-accident-settlement.html" class="blog-card-link">Read Full Story <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
                     </div>
                 </article>
@@ -544,17 +542,15 @@
                 <!-- Post 2 -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <span class="category">Verdict</span>
-                        <div class="blog-card-icon">
-                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-                        </div>
+                        <img src="images/blog/workplace_injury_steps.png" alt="Workplace safety equipment and paperwork" width="800" height="500">
+                        <span class="category">Workplace Injury</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>Oct 28, 2024</span>
                         </div>
-                        <h3 class="blog-card-title">$1.8 Million Verdict for Truck Accident Client</h3>
-                        <p class="blog-card-excerpt">Jury awards significant damages to our client injured by an 18-wheeler whose driver violated federal hours-of-service regulations.</p>
+                        <h3 class="blog-card-title">5 Steps to Take Immediately After a Workplace Injury</h3>
+                        <p class="blog-card-excerpt">Reporting your injury and documenting the incident are crucial first steps to protect your workers' compensation claim.</p>
                         <a href="blog-single.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
                     </div>
                 </article>
@@ -562,72 +558,64 @@
                 <!-- Post 3 -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <span class="category">Guide</span>
-                        <div class="blog-card-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 8.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                        </div>
+                        <img src="images/blog/filing_deadline.png" alt="Calendar and legal documents" width="800" height="500">
+                        <span class="category">Legal Guide</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>Oct 12, 2024</span>
                         </div>
-                        <h3 class="blog-card-title">What to Do After a Slip and Fall Injury</h3>
-                        <p class="blog-card-excerpt">Essential steps to take immediately after a fall on someone else's property to protect your health and legal rights.</p>
-                        <a href="blog-slip-and-fall-guide.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+                        <h3 class="blog-card-title">How Long Do I Have to File a Personal Injury Claim?</h3>
+                        <p class="blog-card-excerpt">Understanding the statute of limitations is critical. Missing the deadline could mean losing your right to seek compensation forever.</p>
+                        <a href="blog-single.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
                     </div>
                 </article>
 
                 <!-- Post 4 -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <span class="category">Guide</span>
-                        <div class="blog-card-icon">
-                            <svg viewBox="0 0 24 24"><path d="M19.44 9.03L15.41 5H11v2h3.59l2 2H5v2h12.49l-6.92 6.07L12 18.17l8-7-8-7 1.41-1.41z"/></svg>
-                        </div>
+                        <img src="images/blog/damages_recovery.png" alt="Calculator and medical bills" width="800" height="500">
+                        <span class="category">Compensation</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>Sep 25, 2024</span>
                         </div>
-                        <h3 class="blog-card-title">Understanding Your Rights After a Motorcycle Crash</h3>
-                        <p class="blog-card-excerpt">Motorcycle riders face unique challenges in injury claims. Learn how to navigate insurance issues and maximize your recovery.</p>
-                        <a href="blog-motorcycle-crash-rights.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+                        <h3 class="blog-card-title">What Damages Can I Recover in a Personal Injury Case?</h3>
+                        <p class="blog-card-excerpt">From medical expenses to pain and suffering, learn about the different types of damages you may be entitled to recover.</p>
+                        <a href="blog-single.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
                     </div>
                 </article>
 
                 <!-- Post 5 -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <span class="category">Guide</span>
-                        <div class="blog-card-icon">
-                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
-                        </div>
+                        <img src="images/blog/medical_documentation.png" alt="Reviewing medical documents" width="800" height="500">
+                        <span class="category">Medical Evidence</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>Sep 8, 2024</span>
                         </div>
-                        <h3 class="blog-card-title">Traumatic Brain Injury Compensation Guide</h3>
-                        <p class="blog-card-excerpt">TBI cases require special expertise. Discover how we build comprehensive claims that account for lifelong impacts.</p>
-                        <a href="blog-tbi-compensation-guide.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+                        <h3 class="blog-card-title">The Importance of Medical Documentation in Your Case</h3>
+                        <p class="blog-card-excerpt">Thorough medical records are the backbone of a strong personal injury claim. Learn why documenting your treatment is essential.</p>
+                        <a href="blog-single.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
                     </div>
                 </article>
 
                 <!-- Post 6 -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <span class="category">Guide</span>
-                        <div class="blog-card-icon">
-                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
-                        </div>
+                        <img src="images/blog/insurance_negotiation.png" alt="Lawyer negotiating" width="800" height="500">
+                        <span class="category">Insurance</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>Aug 22, 2024</span>
                         </div>
-                        <h3 class="blog-card-title">Medical Malpractice: When Doctors Make Mistakes</h3>
-                        <p class="blog-card-excerpt">Surgical errors, misdiagnosis, and medication mistakes can have devastating consequences. Know the signs and your options.</p>
-                        <a href="blog-medical-malpractice.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+                        <h3 class="blog-card-title">Negotiating with Insurance Companies: What You Need to Know</h3>
+                        <p class="blog-card-excerpt">Insurance adjusters minimize payouts. Discover the strategies they use and how an attorney can help you fight for more.</p>
+                        <a href="blog-single.html" class="blog-card-link">Read More <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
                     </div>
                 </article>
             </div>
