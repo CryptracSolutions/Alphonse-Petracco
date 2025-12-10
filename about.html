@@ -3721,8 +3721,9 @@
         // ============================================
         // CONSULTATION MODAL
         // ============================================
-        document.addEventListener('DOMContentLoaded', function () {
+        (function () {
             const modal = document.getElementById('consultationModal');
+            const openBtn = document.getElementById('openConsultationModal');
             const openBtns = document.querySelectorAll('.open-consultation-modal');
             const closeBtn = document.getElementById('closeConsultationModal');
 
@@ -3751,6 +3752,7 @@
                 document.body.classList.remove('modal-open');
             }
 
+            if (openBtn) openBtn.addEventListener('click', openModal);
             openBtns.forEach(btn => btn.addEventListener('click', openModal));
             closeBtn.addEventListener('click', closeModal);
 
@@ -3821,7 +3823,7 @@
                     }
                 });
             }
-        });
+        })();
     </script>
 
     <!-- Consultation Modal -->
