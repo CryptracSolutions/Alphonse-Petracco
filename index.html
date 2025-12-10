@@ -4482,25 +4482,14 @@
                     statNumbers.forEach((stat, index) => {
                         setTimeout(() => {
                             const text = stat.textContent;
-                            let target, suffix;
+                            const target = parseInt(stat.getAttribute('data-target')) || 0;
+                            const suffix = text.includes('%') ? '%' : (text.includes('$') ? 'M+' : '+');
 
                             if (text.includes('$')) {
-                                target = 150;
-                                suffix = 'M+';
                                 stat.textContent = '$0M+';
                                 animateCounter(stat, target, 'M+');
                                 stat.textContent = '$' + stat.textContent;
-                            } else if (text.includes('%')) {
-                                target = 98;
-                                suffix = '%';
-                                animateCounter(stat, target, suffix);
-                            } else if (text.includes('+') && parseInt(text) > 100) {
-                                target = 5000;
-                                suffix = '+';
-                                animateCounter(stat, target, suffix);
                             } else {
-                                target = 25;
-                                suffix = '+';
                                 animateCounter(stat, target, suffix);
                             }
                         }, index * 200);
