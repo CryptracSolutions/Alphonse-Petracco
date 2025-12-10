@@ -3240,8 +3240,9 @@
         // ============================================
         // CONSULTATION MODAL
         // ============================================
-        document.addEventListener('DOMContentLoaded', function () {
+        (function () {
             const modal = document.getElementById('consultationModal');
+            const openBtn = document.getElementById('openConsultationModal');
             const openBtns = document.querySelectorAll('.open-consultation-modal');
             const closeBtn = document.getElementById('closeConsultationModal');
 
@@ -3270,6 +3271,7 @@
                 document.body.classList.remove('modal-open');
             }
 
+            if (openBtn) openBtn.addEventListener('click', openModal);
             openBtns.forEach(btn => btn.addEventListener('click', openModal));
             closeBtn.addEventListener('click', closeModal);
 
@@ -3340,7 +3342,83 @@
                     }
                 });
             }
-        });
+
+            // ============================================
+            // CUSTOM SELECT DROPDOWNS (for modal)
+            // ============================================
+            document.querySelectorAll('#consultationModal .custom-select').forEach(customSelect => {
+                const trigger = customSelect.querySelector('.custom-select-trigger');
+                const options = customSelect.querySelector('.custom-select-options');
+                const nativeSelect = customSelect.querySelector('.form-select');
+                const optionItems = customSelect.querySelectorAll('.custom-select-option');
+                const triggerText = trigger.querySelector('span:first-child');
+                const placeholder = customSelect.dataset.placeholder;
+
+                // Toggle dropdown on trigger click
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = customSelect.classList.contains('open');
+
+                    // Close all other dropdowns
+                    document.querySelectorAll('.custom-select.open').forEach(cs => {
+                        if (cs !== customSelect) {
+                            cs.classList.remove('open');
+                            cs.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    customSelect.classList.toggle('open');
+                    trigger.setAttribute('aria-expanded', !isOpen);
+                });
+
+                // Handle option selection
+                optionItems.forEach(option => {
+                    option.addEventListener('click', () => {
+                        const value = option.dataset.value;
+                        const text = option.querySelector('span:first-child').textContent;
+
+                        // Update native select
+                        nativeSelect.value = value;
+                        nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+
+                        // Update trigger text
+                        triggerText.textContent = text;
+                        triggerText.classList.remove('placeholder');
+
+                        // Update selected state
+                        optionItems.forEach(opt => opt.classList.remove('selected'));
+                        option.classList.add('selected');
+
+                        // Close dropdown
+                        customSelect.classList.remove('open');
+                        trigger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                // Keyboard navigation
+                trigger.addEventListener('keydown', (e) => {
+                    const isOpen = customSelect.classList.contains('open');
+
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        trigger.click();
+                    } else if (e.key === 'Escape' && isOpen) {
+                        customSelect.classList.remove('open');
+                        trigger.setAttribute('aria-expanded', 'false');
+                    } else if (e.key === 'ArrowDown' && isOpen) {
+                        e.preventDefault();
+                        const current = customSelect.querySelector('.custom-select-option.selected') || optionItems[0];
+                        const next = current.nextElementSibling || optionItems[0];
+                        if (next) next.click();
+                    } else if (e.key === 'ArrowUp' && isOpen) {
+                        e.preventDefault();
+                        const current = customSelect.querySelector('.custom-select-option.selected') || optionItems[0];
+                        const prev = current.previousElementSibling || optionItems[optionItems.length - 1];
+                        if (prev) prev.click();
+                    }
+                });
+            });
+        })();
     </script>
 
     <!-- AI Chatbot -->

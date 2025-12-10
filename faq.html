@@ -3807,6 +3807,192 @@
         </div>
     </div>
 
+    <!-- Consultation Modal Script -->
+    <script>
+        // ============================================
+        // CONSULTATION MODAL
+        // ============================================
+        (function () {
+            const modal = document.getElementById('consultationModal');
+            const openBtn = document.getElementById('openConsultationModal');
+            const openBtns = document.querySelectorAll('.open-consultation-modal');
+            const closeBtn = document.getElementById('closeConsultationModal');
+
+            if (!modal || !closeBtn) return;
+
+            function openModal() {
+                modal.classList.add('active');
+                document.body.classList.add('modal-open');
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    document.getElementById('mobileMenuBackdrop')?.classList.remove('active');
+                    document.querySelector('.nav-toggle')?.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+                // Focus first input
+                setTimeout(() => {
+                    const firstInput = modal.querySelector('input');
+                    if (firstInput) firstInput.focus();
+                }, 100);
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            openBtns.forEach(btn => btn.addEventListener('click', openModal));
+            closeBtn.addEventListener('click', closeModal);
+
+            // Close on overlay click (not card)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            // Form submission
+            const form = document.getElementById('consultationForm');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const btn = form.querySelector('.btn');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<span>Sending...</span>';
+                    btn.disabled = true;
+
+                    const formData = new FormData(form);
+
+                    try {
+                        const response = await fetch('https://formspree.io/f/mdkqlqyw', {
+                            method: 'POST',
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            btn.innerHTML = '<span>Thank You! We\'ll Be In Touch.</span>';
+                            btn.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+                            setTimeout(() => {
+                                closeModal();
+                                form.reset();
+                                btn.innerHTML = originalText;
+                                btn.style.background = '';
+                                btn.disabled = false;
+                                // Reset custom selects in modal
+                                document.querySelectorAll('#consultationModal .custom-select').forEach(cs => {
+                                    const trigger = cs.querySelector('.custom-select-trigger span:first-child');
+                                    const placeholder = cs.dataset.placeholder;
+                                    if (trigger && placeholder) {
+                                        trigger.textContent = placeholder;
+                                        trigger.classList.add('placeholder');
+                                    }
+                                    cs.querySelectorAll('.custom-select-option').forEach(opt => opt.classList.remove('selected'));
+                                });
+                            }, 2500);
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        btn.innerHTML = '<span>Error - Please Try Again</span>';
+                        btn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style.background = '';
+                            btn.disabled = false;
+                        }, 3000);
+                    }
+                });
+            }
+
+            // ============================================
+            // CUSTOM SELECT DROPDOWNS (for modal)
+            // ============================================
+            document.querySelectorAll('#consultationModal .custom-select').forEach(customSelect => {
+                const trigger = customSelect.querySelector('.custom-select-trigger');
+                const options = customSelect.querySelector('.custom-select-options');
+                const nativeSelect = customSelect.querySelector('.form-select');
+                const optionItems = customSelect.querySelectorAll('.custom-select-option');
+                const triggerText = trigger.querySelector('span:first-child');
+                const placeholder = customSelect.dataset.placeholder;
+
+                // Toggle dropdown on trigger click
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = customSelect.classList.contains('open');
+
+                    // Close all other dropdowns
+                    document.querySelectorAll('.custom-select.open').forEach(cs => {
+                        if (cs !== customSelect) {
+                            cs.classList.remove('open');
+                            cs.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    customSelect.classList.toggle('open');
+                    trigger.setAttribute('aria-expanded', !isOpen);
+                });
+
+                // Handle option selection
+                optionItems.forEach(option => {
+                    option.addEventListener('click', () => {
+                        const value = option.dataset.value;
+                        const text = option.querySelector('span:first-child').textContent;
+
+                        // Update native select
+                        nativeSelect.value = value;
+                        nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+
+                        // Update trigger text
+                        triggerText.textContent = text;
+                        triggerText.classList.remove('placeholder');
+
+                        // Update selected state
+                        optionItems.forEach(opt => opt.classList.remove('selected'));
+                        option.classList.add('selected');
+
+                        // Close dropdown
+                        customSelect.classList.remove('open');
+                        trigger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                // Keyboard navigation
+                trigger.addEventListener('keydown', (e) => {
+                    const isOpen = customSelect.classList.contains('open');
+
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        trigger.click();
+                    } else if (e.key === 'Escape' && isOpen) {
+                        customSelect.classList.remove('open');
+                        trigger.setAttribute('aria-expanded', 'false');
+                    } else if (e.key === 'ArrowDown' && isOpen) {
+                        e.preventDefault();
+                        const current = customSelect.querySelector('.custom-select-option.selected') || optionItems[0];
+                        const next = current.nextElementSibling || optionItems[0];
+                        if (next) next.click();
+                    } else if (e.key === 'ArrowUp' && isOpen) {
+                        e.preventDefault();
+                        const current = customSelect.querySelector('.custom-select-option.selected') || optionItems[0];
+                        const prev = current.previousElementSibling || optionItems[optionItems.length - 1];
+                        if (prev) prev.click();
+                    }
+                });
+            });
+        })();
+    </script>
+
     <!-- AI Chatbot -->
     <script src="chatbot.js"></script>
 </body>
