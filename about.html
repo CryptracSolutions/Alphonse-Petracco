@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://lionlaw.com/open-graph.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
     <title>About Our Firm | Lion Law</title>
-    <meta name="description" content="Learn about Lion Law - a client-first personal injury firm committed to helping injury victims rebuild their lives. 25+ years of experience, $50M+ recovered.">
+    <meta name="description"
+        content="Learn about Lion Law - a client-first personal injury firm committed to helping injury victims rebuild their lives. 25+ years of experience, $50M+ recovered.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/lion-law-logo.svg">
@@ -12,14 +18,17 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="About Our Firm | Lion Law">
-    <meta property="og:description" content="Learn about Lion Law - a client-first personal injury firm committed to helping injury victims rebuild their lives. 25+ years of experience, $50M+ recovered.">
+    <meta property="og:description"
+        content="Learn about Lion Law - a client-first personal injury firm committed to helping injury victims rebuild their lives. 25+ years of experience, $50M+ recovered.">
     <meta property="og:image" content="/lion-law-logo.svg">
     <meta property="og:site_name" content="Lion Law">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         /* ============================================
@@ -65,7 +74,9 @@
             --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -187,12 +198,32 @@
         }
 
         @keyframes ring {
-            0%, 100% { transform: rotate(0deg); }
-            10% { transform: rotate(15deg); }
-            20% { transform: rotate(-10deg); }
-            30% { transform: rotate(10deg); }
-            40% { transform: rotate(-5deg); }
-            50%, 100% { transform: rotate(0deg); }
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            10% {
+                transform: rotate(15deg);
+            }
+
+            20% {
+                transform: rotate(-10deg);
+            }
+
+            30% {
+                transform: rotate(10deg);
+            }
+
+            40% {
+                transform: rotate(-5deg);
+            }
+
+            50%,
+            100% {
+                transform: rotate(0deg);
+            }
         }
 
         .lawyer-banner-text {
@@ -601,21 +632,99 @@
            NAVIGATION DROPDOWNS (Desktop Only)
            ============================================ */
         @media (min-width: 769px) {
-            .nav-dropdown { position: relative; }
-            .nav-dropdown-trigger { gap: 0.35rem; }
-            .nav-dropdown-trigger::after { left: 0.75rem; right: auto; width: calc(100% - 1.5rem - 12px - 0.35rem); }
-            .nav-dropdown-trigger .dropdown-arrow { width: 12px; height: 12px; fill: currentColor; transition: transform 0.3s var(--ease-out-quart); flex-shrink: 0; }
-            .nav-dropdown:hover .dropdown-arrow, .nav-dropdown.active .dropdown-arrow { transform: rotate(180deg); }
-            .nav-dropdown-menu { position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(-10px); min-width: 220px; background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.98)); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 8px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, transform 0.3s var(--ease-out-quart), visibility 0.3s; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 1000; }
-            .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.active .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-            .nav-dropdown-menu a { display: block; padding: 0.75rem 1.25rem; font-size: 0.85rem; font-weight: 500; color: var(--gray-light); white-space: nowrap; transition: all 0.2s ease; position: relative; }
-            .nav-dropdown-menu a::after { display: none; }
-            .nav-dropdown-menu a:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); padding-left: 1.5rem; }
-            .nav-dropdown::before { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 0.5rem; background: transparent; }
+            .nav-dropdown {
+                position: relative;
+            }
+
+            .nav-dropdown-trigger {
+                gap: 0.35rem;
+            }
+
+            .nav-dropdown-trigger::after {
+                left: 0.75rem;
+                right: auto;
+                width: calc(100% - 1.5rem - 12px - 0.35rem);
+            }
+
+            .nav-dropdown-trigger .dropdown-arrow {
+                width: 12px;
+                height: 12px;
+                fill: currentColor;
+                transition: transform 0.3s var(--ease-out-quart);
+                flex-shrink: 0;
+            }
+
+            .nav-dropdown:hover .dropdown-arrow,
+            .nav-dropdown.active .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+
+            .nav-dropdown-menu {
+                position: absolute;
+                top: calc(100% + 0.5rem);
+                left: 50%;
+                transform: translateX(-50%) translateY(-10px);
+                min-width: 220px;
+                background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(18, 18, 18, 0.98));
+                border: 1px solid rgba(212, 175, 55, 0.15);
+                border-radius: 8px;
+                padding: 0.5rem 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, transform 0.3s var(--ease-out-quart), visibility 0.3s;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                z-index: 1000;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-menu,
+            .nav-dropdown.active .nav-dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .nav-dropdown-menu a {
+                display: block;
+                padding: 0.75rem 1.25rem;
+                font-size: 0.85rem;
+                font-weight: 500;
+                color: var(--gray-light);
+                white-space: nowrap;
+                transition: all 0.2s ease;
+                position: relative;
+            }
+
+            .nav-dropdown-menu a::after {
+                display: none;
+            }
+
+            .nav-dropdown-menu a:hover {
+                background: rgba(212, 175, 55, 0.1);
+                color: var(--gold);
+                padding-left: 1.5rem;
+            }
+
+            .nav-dropdown::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 0.5rem;
+                background: transparent;
+            }
         }
+
         @media (max-width: 768px) {
-            .nav-dropdown-menu { display: none !important; }
-            .nav-dropdown-trigger .dropdown-arrow { display: none; }
+            .nav-dropdown-menu {
+                display: none !important;
+            }
+
+            .nav-dropdown-trigger .dropdown-arrow {
+                display: none;
+            }
         }
 
         /* ============================================
@@ -763,47 +872,258 @@
             0% {
                 transform: translateY(-150px) rotate(var(--rotation, 0deg));
             }
+
             100% {
                 transform: translateY(calc(100vh + 150px)) rotate(var(--rotation, 0deg));
             }
         }
 
-        .dollar-bill:nth-child(1) { left: 5%; width: 60px; --rotation: -15deg; animation-duration: 18s; animation-delay: 0s; }
-        .dollar-bill:nth-child(2) { left: 12%; width: 45px; --rotation: 20deg; animation-duration: 22s; animation-delay: -4s; }
-        .dollar-bill:nth-child(3) { left: 20%; width: 55px; --rotation: -8deg; animation-duration: 20s; animation-delay: -8s; }
-        .dollar-bill:nth-child(4) { left: 28%; width: 40px; --rotation: 12deg; animation-duration: 25s; animation-delay: -2s; }
-        .dollar-bill:nth-child(5) { left: 35%; width: 65px; --rotation: -22deg; animation-duration: 19s; animation-delay: -10s; }
-        .dollar-bill:nth-child(6) { left: 42%; width: 50px; --rotation: 18deg; animation-duration: 23s; animation-delay: -6s; }
-        .dollar-bill:nth-child(7) { left: 50%; width: 42px; --rotation: -10deg; animation-duration: 21s; animation-delay: -14s; }
-        .dollar-bill:nth-child(8) { left: 58%; width: 58px; --rotation: 25deg; animation-duration: 17s; animation-delay: -12s; }
-        .dollar-bill:nth-child(9) { left: 65%; width: 48px; --rotation: -18deg; animation-duration: 24s; animation-delay: -3s; }
-        .dollar-bill:nth-child(10) { left: 72%; width: 52px; --rotation: 8deg; animation-duration: 26s; animation-delay: -16s; }
-        .dollar-bill:nth-child(11) { left: 80%; width: 44px; --rotation: -12deg; animation-duration: 20s; animation-delay: -7s; }
-        .dollar-bill:nth-child(12) { left: 88%; width: 56px; --rotation: 15deg; animation-duration: 18s; animation-delay: -11s; }
-        .dollar-bill:nth-child(13) { left: 95%; width: 38px; --rotation: -20deg; animation-duration: 22s; animation-delay: -5s; }
-        .dollar-bill:nth-child(14) { left: 3%; width: 62px; --rotation: 22deg; animation-duration: 24s; animation-delay: -13s; }
-        .dollar-bill:nth-child(15) { left: 45%; width: 46px; --rotation: -5deg; animation-duration: 19s; animation-delay: -9s; }
-        .dollar-bill:nth-child(16) { left: 18%; width: 54px; --rotation: 28deg; animation-duration: 21s; animation-delay: -1s; }
-        .dollar-bill:nth-child(17) { left: 55%; width: 40px; --rotation: -25deg; animation-duration: 23s; animation-delay: -15s; }
-        .dollar-bill:nth-child(18) { left: 78%; width: 50px; --rotation: 10deg; animation-duration: 18s; animation-delay: -8s; }
-        .dollar-bill:nth-child(19) { left: 32%; width: 58px; --rotation: -16deg; animation-duration: 25s; animation-delay: -4s; }
-        .dollar-bill:nth-child(20) { left: 68%; width: 44px; --rotation: 18deg; animation-duration: 20s; animation-delay: -11s; }
-        .dollar-bill:nth-child(21) { left: 10%; width: 52px; --rotation: 14deg; animation-duration: 19s; animation-delay: -2s; }
-        .dollar-bill:nth-child(22) { left: 24%; width: 48px; --rotation: -28deg; animation-duration: 22s; animation-delay: -17s; }
-        .dollar-bill:nth-child(23) { left: 40%; width: 56px; --rotation: 8deg; animation-duration: 24s; animation-delay: -6s; }
-        .dollar-bill:nth-child(24) { left: 52%; width: 42px; --rotation: -14deg; animation-duration: 18s; animation-delay: -13s; }
-        .dollar-bill:nth-child(25) { left: 63%; width: 60px; --rotation: 22deg; animation-duration: 21s; animation-delay: -9s; }
-        .dollar-bill:nth-child(26) { left: 76%; width: 46px; --rotation: -6deg; animation-duration: 23s; animation-delay: -1s; }
-        .dollar-bill:nth-child(27) { left: 84%; width: 54px; --rotation: 16deg; animation-duration: 20s; animation-delay: -15s; }
-        .dollar-bill:nth-child(28) { left: 6%; width: 50px; --rotation: -20deg; animation-duration: 26s; animation-delay: -8s; }
-        .dollar-bill:nth-child(29) { left: 48%; width: 58px; --rotation: 12deg; animation-duration: 17s; animation-delay: -3s; }
-        .dollar-bill:nth-child(30) { left: 90%; width: 44px; --rotation: -24deg; animation-duration: 22s; animation-delay: -12s; }
+        .dollar-bill:nth-child(1) {
+            left: 5%;
+            width: 60px;
+            --rotation: -15deg;
+            animation-duration: 18s;
+            animation-delay: 0s;
+        }
+
+        .dollar-bill:nth-child(2) {
+            left: 12%;
+            width: 45px;
+            --rotation: 20deg;
+            animation-duration: 22s;
+            animation-delay: -4s;
+        }
+
+        .dollar-bill:nth-child(3) {
+            left: 20%;
+            width: 55px;
+            --rotation: -8deg;
+            animation-duration: 20s;
+            animation-delay: -8s;
+        }
+
+        .dollar-bill:nth-child(4) {
+            left: 28%;
+            width: 40px;
+            --rotation: 12deg;
+            animation-duration: 25s;
+            animation-delay: -2s;
+        }
+
+        .dollar-bill:nth-child(5) {
+            left: 35%;
+            width: 65px;
+            --rotation: -22deg;
+            animation-duration: 19s;
+            animation-delay: -10s;
+        }
+
+        .dollar-bill:nth-child(6) {
+            left: 42%;
+            width: 50px;
+            --rotation: 18deg;
+            animation-duration: 23s;
+            animation-delay: -6s;
+        }
+
+        .dollar-bill:nth-child(7) {
+            left: 50%;
+            width: 42px;
+            --rotation: -10deg;
+            animation-duration: 21s;
+            animation-delay: -14s;
+        }
+
+        .dollar-bill:nth-child(8) {
+            left: 58%;
+            width: 58px;
+            --rotation: 25deg;
+            animation-duration: 17s;
+            animation-delay: -12s;
+        }
+
+        .dollar-bill:nth-child(9) {
+            left: 65%;
+            width: 48px;
+            --rotation: -18deg;
+            animation-duration: 24s;
+            animation-delay: -3s;
+        }
+
+        .dollar-bill:nth-child(10) {
+            left: 72%;
+            width: 52px;
+            --rotation: 8deg;
+            animation-duration: 26s;
+            animation-delay: -16s;
+        }
+
+        .dollar-bill:nth-child(11) {
+            left: 80%;
+            width: 44px;
+            --rotation: -12deg;
+            animation-duration: 20s;
+            animation-delay: -7s;
+        }
+
+        .dollar-bill:nth-child(12) {
+            left: 88%;
+            width: 56px;
+            --rotation: 15deg;
+            animation-duration: 18s;
+            animation-delay: -11s;
+        }
+
+        .dollar-bill:nth-child(13) {
+            left: 95%;
+            width: 38px;
+            --rotation: -20deg;
+            animation-duration: 22s;
+            animation-delay: -5s;
+        }
+
+        .dollar-bill:nth-child(14) {
+            left: 3%;
+            width: 62px;
+            --rotation: 22deg;
+            animation-duration: 24s;
+            animation-delay: -13s;
+        }
+
+        .dollar-bill:nth-child(15) {
+            left: 45%;
+            width: 46px;
+            --rotation: -5deg;
+            animation-duration: 19s;
+            animation-delay: -9s;
+        }
+
+        .dollar-bill:nth-child(16) {
+            left: 18%;
+            width: 54px;
+            --rotation: 28deg;
+            animation-duration: 21s;
+            animation-delay: -1s;
+        }
+
+        .dollar-bill:nth-child(17) {
+            left: 55%;
+            width: 40px;
+            --rotation: -25deg;
+            animation-duration: 23s;
+            animation-delay: -15s;
+        }
+
+        .dollar-bill:nth-child(18) {
+            left: 78%;
+            width: 50px;
+            --rotation: 10deg;
+            animation-duration: 18s;
+            animation-delay: -8s;
+        }
+
+        .dollar-bill:nth-child(19) {
+            left: 32%;
+            width: 58px;
+            --rotation: -16deg;
+            animation-duration: 25s;
+            animation-delay: -4s;
+        }
+
+        .dollar-bill:nth-child(20) {
+            left: 68%;
+            width: 44px;
+            --rotation: 18deg;
+            animation-duration: 20s;
+            animation-delay: -11s;
+        }
+
+        .dollar-bill:nth-child(21) {
+            left: 10%;
+            width: 52px;
+            --rotation: 14deg;
+            animation-duration: 19s;
+            animation-delay: -2s;
+        }
+
+        .dollar-bill:nth-child(22) {
+            left: 24%;
+            width: 48px;
+            --rotation: -28deg;
+            animation-duration: 22s;
+            animation-delay: -17s;
+        }
+
+        .dollar-bill:nth-child(23) {
+            left: 40%;
+            width: 56px;
+            --rotation: 8deg;
+            animation-duration: 24s;
+            animation-delay: -6s;
+        }
+
+        .dollar-bill:nth-child(24) {
+            left: 52%;
+            width: 42px;
+            --rotation: -14deg;
+            animation-duration: 18s;
+            animation-delay: -13s;
+        }
+
+        .dollar-bill:nth-child(25) {
+            left: 63%;
+            width: 60px;
+            --rotation: 22deg;
+            animation-duration: 21s;
+            animation-delay: -9s;
+        }
+
+        .dollar-bill:nth-child(26) {
+            left: 76%;
+            width: 46px;
+            --rotation: -6deg;
+            animation-duration: 23s;
+            animation-delay: -1s;
+        }
+
+        .dollar-bill:nth-child(27) {
+            left: 84%;
+            width: 54px;
+            --rotation: 16deg;
+            animation-duration: 20s;
+            animation-delay: -15s;
+        }
+
+        .dollar-bill:nth-child(28) {
+            left: 6%;
+            width: 50px;
+            --rotation: -20deg;
+            animation-duration: 26s;
+            animation-delay: -8s;
+        }
+
+        .dollar-bill:nth-child(29) {
+            left: 48%;
+            width: 58px;
+            --rotation: 12deg;
+            animation-duration: 17s;
+            animation-delay: -3s;
+        }
+
+        .dollar-bill:nth-child(30) {
+            left: 90%;
+            width: 44px;
+            --rotation: -24deg;
+            animation-duration: 22s;
+            animation-delay: -12s;
+        }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -2109,83 +2429,96 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+
             .modal-card {
                 padding: 1.75rem;
             }
+
             .modal-title {
                 font-size: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-main">
-        <div class="container nav-inner">
-            <a href="index.html" class="nav-logo">
-                <div class="nav-logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660">
-                        <g transform="translate(660, 660) scale(-1, -1)">
-                        <path fill="currentColor" fill-rule="evenodd" d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156"/>
-                        </g>
-                    </svg>
-                </div>
-                <span>Lion Law</span>
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="nav-dropdown">
-                    <a href="practice.html" class="nav-dropdown-trigger">Practice Areas<svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z"/></svg></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="practice.html#motor-vehicles">Motor Vehicle Accidents</a>
-                        <a href="practice.html#catastrophic-injuries">Catastrophic Injuries</a>
-                        <a href="practice.html#premises-liability">Slip & Fall / Premises</a>
-                        <a href="practice.html#medical-malpractice">Medical Malpractice</a>
-                        <a href="practice.html#construction-accidents">Construction Accidents</a>
-                        <a href="practice.html#wrongful-death">Wrongful Death</a>
+            <div class="container nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <div class="nav-logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660">
+                            <g transform="translate(660, 660) scale(-1, -1)">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156" />
+                            </g>
+                        </svg>
                     </div>
-                </li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="case-results.html">Case Results</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li class="nav-dropdown">
-                    <a href="faq.html" class="nav-dropdown-trigger">FAQ<svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z"/></svg></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="faq.html#case">Your Case & Claims</a>
-                        <a href="faq.html#fees">Fees & Costs</a>
-                        <a href="faq.html#process">The Legal Process</a>
-                        <a href="faq.html#practice">Practice Areas</a>
-                        <a href="faq.html#why">Why Choose Lion Law</a>
-                    </div>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <a href="tel:9738684343" class="nav-phone">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    (973) 868-4343
+                    <span>Lion Law</span>
                 </a>
-                <button type="button" class="btn btn-primary open-consultation-modal"><span>Free Consultation</span></button>
-            </div>
 
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="practice.html" class="nav-dropdown-trigger">Practice Areas<svg class="dropdown-arrow"
+                                viewBox="0 0 24 24" width="12" height="12">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg></a>
+                        <div class="nav-dropdown-menu">
+                            <a href="practice.html#motor-vehicles">Motor Vehicle Accidents</a>
+                            <a href="practice.html#catastrophic-injuries">Catastrophic Injuries</a>
+                            <a href="practice.html#premises-liability">Slip & Fall / Premises</a>
+                            <a href="practice.html#medical-malpractice">Medical Malpractice</a>
+                            <a href="practice.html#construction-accidents">Construction Accidents</a>
+                            <a href="practice.html#wrongful-death">Wrongful Death</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="case-results.html">Case Results</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="nav-dropdown">
+                        <a href="faq.html" class="nav-dropdown-trigger">FAQ<svg class="dropdown-arrow"
+                                viewBox="0 0 24 24" width="12" height="12">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg></a>
+                        <div class="nav-dropdown-menu">
+                            <a href="faq.html#case">Your Case & Claims</a>
+                            <a href="faq.html#fees">Fees & Costs</a>
+                            <a href="faq.html#process">The Legal Process</a>
+                            <a href="faq.html#practice">Practice Areas</a>
+                            <a href="faq.html#why">Why Choose Lion Law</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="tel:9738684343" class="nav-phone">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        (973) 868-4343
+                    </a>
+                    <button type="button" class="btn btn-primary open-consultation-modal"><span>Free
+                            Consultation</span></button>
+                </div>
+
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
         <!-- Lawyer Answers Every Call Banner -->
         <a href="tel:9738684343" class="lawyer-banner">
             <div class="container lawyer-banner-inner">
                 <svg class="lawyer-banner-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    <path
+                        d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
                 <span class="lawyer-banner-text">A Lawyer Answers Every Call</span>
                 <span class="lawyer-banner-badge">24/7</span>
@@ -2201,7 +2534,8 @@
                 <div class="mobile-menu-logo-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660">
                         <g transform="translate(660, 660) scale(-1, -1)">
-                        <path fill="currentColor" fill-rule="evenodd" d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156"/>
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156" />
                         </g>
                     </svg>
                 </div>
@@ -2209,7 +2543,8 @@
             </a>
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                 </svg>
             </button>
         </div>
@@ -2229,7 +2564,8 @@
             <button type="button" class="mobile-menu-cta open-consultation-modal">Free Consultation</button>
             <a href="tel:9738684343" class="mobile-menu-phone">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    <path
+                        d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
                 (973) 868-4343
             </a>
@@ -2242,45 +2578,526 @@
 
         <!-- Falling Money Animation -->
         <div class="falling-money">
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
-            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/><circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/><ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif" fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140" y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text></svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
+            <div class="dollar-bill"><svg viewBox="0 0 156 66" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="154" height="64" rx="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <rect x="5" y="5" width="146" height="56" rx="2" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                    <rect x="10" y="10" width="136" height="46" rx="1" fill="none" stroke="currentColor"
+                        stroke-width="0.5" opacity="0.5" />
+                    <circle cx="25" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <circle cx="131" cy="33" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                    <ellipse cx="78" cy="33" rx="22" ry="18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <text x="78" y="40" text-anchor="middle" font-size="24" font-weight="bold" font-family="serif"
+                        fill="currentColor">$</text><text x="20" y="20" font-size="8" font-weight="bold"
+                        font-family="serif" fill="currentColor">1</text><text x="140" y="20" font-size="8"
+                        font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="20" y="58"
+                        font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text><text x="140"
+                        y="58" font-size="8" font-weight="bold" font-family="serif" fill="currentColor">1</text>
+                </svg></div>
         </div>
 
         <!-- Decorative geometric element -->
         <div class="page-hero-decor">
             <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="200" cy="200" r="180" stroke="#D4AF37" stroke-width="0.5"/>
-                <circle cx="200" cy="200" r="150" stroke="#D4AF37" stroke-width="0.5"/>
-                <circle cx="200" cy="200" r="120" stroke="#D4AF37" stroke-width="0.5"/>
-                <path d="M200 20 L280 100 L360 200 L280 300 L200 380 L120 300 L40 200 L120 100 Z" stroke="#D4AF37" stroke-width="1" fill="none"/>
+                <circle cx="200" cy="200" r="180" stroke="#D4AF37" stroke-width="0.5" />
+                <circle cx="200" cy="200" r="150" stroke="#D4AF37" stroke-width="0.5" />
+                <circle cx="200" cy="200" r="120" stroke="#D4AF37" stroke-width="0.5" />
+                <path d="M200 20 L280 100 L360 200 L280 300 L200 380 L120 300 L40 200 L120 100 Z" stroke="#D4AF37"
+                    stroke-width="1" fill="none" />
             </svg>
         </div>
 
@@ -2301,8 +3118,9 @@
     <section class="about-intro">
         <div class="about-intro-decor">
             <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M200 20 L280 100 L360 200 L280 300 L200 380 L120 300 L40 200 L120 100 Z" stroke="#D4AF37" stroke-width="2" fill="none"/>
-                <circle cx="200" cy="200" r="100" stroke="#D4AF37" stroke-width="1"/>
+                <path d="M200 20 L280 100 L360 200 L280 300 L200 380 L120 300 L40 200 L120 100 Z" stroke="#D4AF37"
+                    stroke-width="2" fill="none" />
+                <circle cx="200" cy="200" r="100" stroke="#D4AF37" stroke-width="1" />
             </svg>
         </div>
 
@@ -2311,10 +3129,14 @@
                 <span class="section-label">Who We Are</span>
                 <h2 class="section-title">Committed to Injury Victims</h2>
                 <p class="about-intro-text">
-                    <strong>Lion Law</strong> is a client-first personal injury firm representing people hurt in car, truck, motorcycle, construction, and medical negligence cases. Our attorneys combine trial skill with compassionate guidance to help clients rebuild after serious injuries.
+                    <strong>Lion Law</strong> is a client-first personal injury firm representing people hurt in car,
+                    truck, motorcycle, construction, and medical negligence cases. Our attorneys combine trial skill
+                    with compassionate guidance to help clients rebuild after serious injuries.
                 </p>
                 <p class="about-intro-text">
-                    We operate on a <strong>contingency fee basis</strong>&mdash;no upfront costs, and no attorney's fee unless we win. Every case receives hands-on attention from our lawyers, prompt communication, and a strategy designed around your goals.
+                    We operate on a <strong>contingency fee basis</strong>&mdash;no upfront costs, and no attorney's fee
+                    unless we win. Every case receives hands-on attention from our lawyers, prompt communication, and a
+                    strategy designed around your goals.
                 </p>
                 <div style="margin-top: 2rem;">
                     <a href="contact.html" class="btn btn-primary"><span>Discover How We Help</span></a>
@@ -2325,11 +3147,13 @@
                 <div class="about-visual-card">
                     <div class="visual-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            <path
+                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
                         </svg>
                     </div>
                     <p class="visual-quote">
-                        "Fighting for injury victims with the <span class="accent">strength of a lion</span> and the precision of master strategists."
+                        "Fighting for injury victims with the <span class="accent">strength of a lion</span> and the
+                        precision of master strategists."
                     </p>
                     <p class="visual-tagline">Where Strength Meets Strategy</p>
                 </div>
@@ -2378,31 +3202,37 @@
                 <article class="commitment-card">
                     <div class="commitment-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                            <path
+                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
                         </svg>
                     </div>
                     <h3>Relentless Advocacy</h3>
-                    <p>We take on insurers and corporations to secure the full value of your claim, from emergency care to long-term needs.</p>
+                    <p>We take on insurers and corporations to secure the full value of your claim, from emergency care
+                        to long-term needs.</p>
                 </article>
 
                 <article class="commitment-card">
                     <div class="commitment-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
                         </svg>
                     </div>
                     <h3>Strategic Guidance</h3>
-                    <p>Every case plan is tailored to your injuries and goals, backed by experts and thorough investigation.</p>
+                    <p>Every case plan is tailored to your injuries and goals, backed by experts and thorough
+                        investigation.</p>
                 </article>
 
                 <article class="commitment-card">
                     <div class="commitment-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                         </svg>
                     </div>
                     <h3>Personal Attention</h3>
-                    <p>You work directly with experienced attorneys who keep you informed and prepared at each stage of the process.</p>
+                    <p>You work directly with experienced attorneys who keep you informed and prepared at each stage of
+                        the process.</p>
                 </article>
             </div>
         </div>
@@ -2416,20 +3246,37 @@
             <div class="testimonials-header">
                 <span class="section-label">Testimonials</span>
                 <h2 class="section-title">Clients We've Guided to Recovery</h2>
-                <p class="section-subtitle">Hear how injury victims describe their experience working with our team and the results we achieved together.</p>
+                <p class="section-subtitle">Hear how injury victims describe their experience working with our team and
+                    the results we achieved together.</p>
             </div>
 
             <div class="testimonials-grid">
                 <article class="testimonial-card">
                     <span class="testimonial-quote-icon">"</span>
                     <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
                     </div>
-                    <p class="testimonial-text">After a rideshare crash left me out of work, Lion Law handled the paperwork, kept me updated, and delivered a settlement that covered everything.</p>
+                    <p class="testimonial-text">After a rideshare crash left me out of work, Lion Law handled the
+                        paperwork, kept me updated, and delivered a settlement that covered everything.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">M</div>
                         <div class="testimonial-info">
@@ -2442,13 +3289,29 @@
                 <article class="testimonial-card">
                     <span class="testimonial-quote-icon">"</span>
                     <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
                     </div>
-                    <p class="testimonial-text">They were patient, honest, and relentless with the insurance adjuster. I never felt alone during my rehabilitation.</p>
+                    <p class="testimonial-text">They were patient, honest, and relentless with the insurance adjuster. I
+                        never felt alone during my rehabilitation.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">T</div>
                         <div class="testimonial-info">
@@ -2461,13 +3324,29 @@
                 <article class="testimonial-card">
                     <span class="testimonial-quote-icon">"</span>
                     <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
                     </div>
-                    <p class="testimonial-text">The firm took my mother's nursing home case seriously and secured accountability and funds for her continued care.</p>
+                    <p class="testimonial-text">The firm took my mother's nursing home case seriously and secured
+                        accountability and funds for her continued care.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">P</div>
                         <div class="testimonial-info">
@@ -2495,7 +3374,8 @@
                     <div class="contact-item">
                         <div class="contact-icon">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                             </svg>
                         </div>
                         <div class="contact-item-content">
@@ -2507,7 +3387,8 @@
                     <div class="contact-item">
                         <div class="contact-icon">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                <path
+                                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
                             </svg>
                         </div>
                         <div class="contact-item-content">
@@ -2519,19 +3400,23 @@
                     <div class="contact-item">
                         <div class="contact-icon">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                             </svg>
                         </div>
                         <div class="contact-item-content">
                             <h4>Email</h4>
-                            <p><a href="mailto:alphonsepetracco@accidentsinjurylawyer.com">alphonsepetracco@accidentsinjurylawyer.com</a></p>
+                            <p><a
+                                    href="mailto:alphonsepetracco@accidentsinjurylawyer.com">alphonsepetracco@accidentsinjurylawyer.com</a>
+                            </p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <div class="contact-icon">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                             </svg>
                         </div>
                         <div class="contact-item-content">
@@ -2545,7 +3430,8 @@
             <div class="contact-cta-card">
                 <h3>Ready to Get Started?</h3>
                 <p>Schedule your free case evaluation today. No obligation, no fees unless we win your case.</p>
-                <button type="button" class="btn btn-primary open-consultation-modal"><span>Request Free Consultation</span></button>
+                <button type="button" class="btn btn-primary open-consultation-modal"><span>Request Free
+                        Consultation</span></button>
             </div>
         </div>
     </section>
@@ -2559,7 +3445,8 @@
                 <a href="contact.html" class="btn-dark">Get Free Consultation</a>
                 <a href="tel:9738684343" class="cta-phone">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                     </svg>
                     (973) 868-4343
                 </a>
@@ -2576,26 +3463,37 @@
                         <div class="footer-logo-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660">
                                 <g transform="translate(660, 660) scale(-1, -1)">
-                                <path fill="currentColor" fill-rule="evenodd" d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156"/>
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="m 428.398,274.635 c -45.335,55.757 -57.022,115.276 -59.444,175.842 17.552,-78.618 60.789,-147.473 123.632,-208.899 -21.397,11.02 -42.79,22.039 -64.188,33.057 m 54.446,48.482 c -47.223,35.635 -68.293,80.905 -82.161,128.844 29.518,-59.387 77.649,-105.908 139.98,-142.627 -19.274,4.594 -38.544,9.186 -57.819,13.783 m -448.123,9.61 c 44.731,57.67 89.463,115.343 134.194,173.014 -6.549,-12.688 -13.098,-25.38 -19.644,-38.071 -6.863,-13.303 -1.984,-29.654 11.048,-37.019 11,-6.218 22.557,-11.521 38.716,-9.241 -28.722,-15.28 -61.632,16.118 -89.687,-10.709 C 84.471,384.709 59.597,358.717 34.721,332.727 M 170.685,63.642 C 255.129,104.244 393.12,251.264 283.133,405.651 208.17,345.19 183.404,187.682 58.247,224.27 c 3.204,-6.151 11.415,-8.349 13.669,-14.113 17.631,-45.061 69.207,-41.804 87.594,-0.754 8.129,18.151 25.34,30.659 38.008,45.991 7.871,-69.478 2.766,-130.888 -26.833,-191.752 m -46.347,182.384 c -15.729,-23.538 -43.505,-19.299 -77.306,-10.375 -8.697,9.37 -12.043,19.407 -10.04,30.12 4.463,12.27 19.968,19.018 13.387,36.809 57.782,2.401 92.642,-23.649 73.959,-56.554 m 22.756,1.842 c 43.504,27.662 35.474,82.77 53.209,124.153 -92.14,-17.514 -70.164,-69.497 -64.587,-91.693 6.925,2.551 13.267,6.601 19.073,12.048 1.382,-15.765 -1.487,-30.528 -7.695,-44.508 M 98.146,360.699 c 9.44,11.83 11.691,27.26 28.319,35.499 l 22.021,10.788 c -7.423,-0.272 -14.53,4.295 -22.266,-0.82 -2.682,-1.775 -4.351,-4.39 -5.577,-7.218 -1.338,0.593 -4.097,4.09 -4.438,4.642 12.932,20.758 39.401,6.328 57.867,6.563 -37.314,-8.48 -48.767,-41.074 -75.926,-49.454 m 157.33,101.946 c 26.884,29.894 45.07,83.549 80.65,89.685 42.839,-36.367 10.709,-117.576 -11.039,-147.249 5.273,28.264 6.784,55.957 -2.68,81.991 -20.804,-16.007 -41.943,-24.988 -66.931,-24.427 M 654.735,351.267 616.69,375.571 c -41.278,4.689 -75.876,21.566 -108.28,42.467 23.499,-9.748 47.821,-16.267 72.891,-19.857 l -22.987,14.686 c -1.401,0.895 -2.783,1.793 -4.167,2.688 -29.593,3.689 -54.516,15.912 -77.88,30.983 17.352,-7.2 35.318,-11.998 53.838,-14.621 -46.439,33.19 -84.184,70.056 -120.425,117.19 -9.463,12.304 -19.972,22.714 -31.173,31.355 -21.607,3.22 -43.214,3.46 -64.827,0.353 9.389,3.138 18.883,5.873 28.549,7.93 -21.924,0.231 -43.434,-2.508 -64.486,-8.584 20.5,10.174 41.834,18.315 65.371,21.068 -16.708,7.13 -34.032,11.177 -51.063,12.457 -16.473,-5.873 -32.106,-13.544 -46.825,-23.182 8.917,8.47 18.241,16.446 28.322,23.496 -5.663,-0.238 -11.252,-0.787 -16.738,-1.625 -25.733,-11.939 -48.581,-27.625 -68.089,-47.666 8.606,12.791 18.001,24.963 29.047,35.843 -36.285,-17.34 -60.725,-50.31 -56.879,-93.337 C 112.786,445.414 64.68,383.617 16.578,321.813 5.536,307.624 6.773,287.698 19.484,274.984 c 2.73,-2.729 5.462,-5.461 8.194,-8.192 -1.768,-22.115 8.257,-40.066 29.242,-54.149 5.161,-4.867 10.995,-25.122 16.152,-29.984 22.787,-21.471 58.491,-21.068 80.784,0.913 12.312,12.136 23.959,39.672 36.273,51.811 5.782,-86.873 -17.216,-164.374 -64.979,-214.432 45.014,28.077 98.391,45.268 153.723,59.906 42.778,39.045 92.217,59.669 143.842,74.251 -33.2,-16.241 -63.53,-36.686 -91.27,-60.935 29.114,7.212 58.206,14.44 86.396,22.856 25.196,23.741 54.036,41.296 84.357,56.345 -18.216,-13.574 -34.888,-28.7 -50.123,-45.263 98.171,34.519 179.727,90.672 202.66,223.156" />
                                 </g>
                             </svg>
                         </div>
                         <span>Lion Law</span>
                     </a>
                     <p class="footer-desc">
-                        Premier personal injury law firm dedicated to fighting for maximum compensation. Where strength meets strategy.
+                        Premier personal injury law firm dedicated to fighting for maximum compensation. Where strength
+                        meets strategy.
                     </p>
                     <div class="footer-contact">
                         <p>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
                             8 Landsdowne Pl, Nutley, NJ 07110
                         </p>
                         <p>
-                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
                             (973) 868-4343
                         </p>
                         <p>
-                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
                             alphonsepetracco@accidentsinjurylawyer.com
                         </p>
                     </div>
@@ -2635,11 +3533,21 @@
                         <li><a href="blog.html">Resources</a></li>
                     </ul>
                     <div class="footer-social">
-                        <a href="https://www.tiktok.com/@lion.law6?_r=1&_t=ZT-91plIgpftpl" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.88 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.16 15.7a6.34 6.34 0 0 0 6.33 6.33 6.34 6.34 0 0 0 6.34-6.33V9.4a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.01-.83z"/></svg>
+                        <a href="https://www.tiktok.com/@lion.law6?_r=1&_t=ZT-91plIgpftpl" target="_blank"
+                            rel="noopener noreferrer" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.88 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.16 15.7a6.34 6.34 0 0 0 6.33 6.33 6.34 6.34 0 0 0 6.34-6.33V9.4a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.01-.83z" />
+                            </svg>
                         </a>
-                        <a href="https://www.instagram.com/lion_law_llc?igsh=MmZ6OXBjaXY5bjlm" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+                        <a href="https://www.instagram.com/lion_law_llc?igsh=MmZ6OXBjaXY5bjlm" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none"
+                                    stroke="currentColor" stroke-width="2" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -2654,7 +3562,10 @@
             </div>
 
             <p class="footer-disclaimer">
-                The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship. Past results do not guarantee future outcomes.
+                The information on this website is for general information purposes only. Nothing on this site should be
+                taken as legal advice for any individual case or situation. This information is not intended to create,
+                and receipt or viewing does not constitute, an attorney-client relationship. Past results do not
+                guarantee future outcomes.
             </p>
         </div>
     </footer>
@@ -2724,7 +3635,7 @@
         });
 
         // Navigation Dropdown Hover (Desktop Only)
-        (function() {
+        (function () {
             const dropdowns = document.querySelectorAll('.nav-dropdown');
             let hoverTimeout = null, closeTimeout = null;
             const HOVER_DELAY = 100, CLOSE_DELAY = 150;
@@ -2811,7 +3722,7 @@
         // ============================================
         // CONSULTATION MODAL
         // ============================================
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const modal = document.getElementById('consultationModal');
             const openBtns = document.querySelectorAll('.open-consultation-modal');
             const closeBtn = document.getElementById('closeConsultationModal');
@@ -2919,7 +3830,7 @@
         <div class="modal-card">
             <button type="button" class="modal-close" id="closeConsultationModal" aria-label="Close modal">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 6L6 18M6 6l12 12"/>
+                    <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
             </button>
             <h3 class="modal-title" id="modalTitle">Free Case Evaluation</h3>
@@ -2929,17 +3840,20 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="modal-name">Full Name</label>
-                        <input type="text" id="modal-name" name="name" class="form-input" placeholder="John Smith" required>
+                        <input type="text" id="modal-name" name="name" class="form-input" placeholder="John Smith"
+                            required>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modal-phone">Phone Number</label>
-                        <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="(973) 868-4343" required>
+                        <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="(973) 868-4343"
+                            required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="modal-email">Email Address</label>
-                    <input type="email" id="modal-email" name="email" class="form-input" placeholder="john@example.com" required>
+                    <input type="email" id="modal-email" name="email" class="form-input" placeholder="john@example.com"
+                        required>
                 </div>
 
                 <div class="form-group">
@@ -2955,42 +3869,57 @@
                             <option value="premises">Slip & Fall / Premises</option>
                             <option value="other">Other</option>
                         </select>
-                        <div class="custom-select-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false">
+                        <div class="custom-select-trigger" tabindex="0" role="combobox" aria-haspopup="listbox"
+                            aria-expanded="false">
                             <span class="placeholder">Select your case type...</span>
                             <div class="custom-select-arrow">
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 10l5 5 5-5z"/>
+                                    <path d="M7 10l5 5 5-5z" />
                                 </svg>
                             </div>
                         </div>
                         <div class="custom-select-options" role="listbox">
                             <div class="custom-select-option" data-value="auto" role="option">
                                 <span>Auto Accident</span>
-                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
                             </div>
                             <div class="custom-select-option" data-value="truck" role="option">
                                 <span>Truck Accident</span>
-                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
                             </div>
                             <div class="custom-select-option" data-value="motorcycle" role="option">
                                 <span>Motorcycle Accident</span>
-                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
                             </div>
                             <div class="custom-select-option" data-value="workplace" role="option">
                                 <span>Workplace Injury</span>
-                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
                             </div>
                             <div class="custom-select-option" data-value="medical" role="option">
                                 <span>Medical Malpractice</span>
-                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
                             </div>
                             <div class="custom-select-option" data-value="premises" role="option">
                                 <span>Slip & Fall / Premises</span>
-                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
                             </div>
                             <div class="custom-select-option" data-value="other" role="option">
                                 <span>Other</span>
-                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
                             </div>
                         </div>
                     </div>
@@ -2998,14 +3927,16 @@
 
                 <div class="form-group">
                     <label class="form-label" for="modal-message">Brief Description</label>
-                    <textarea id="modal-message" name="message" class="form-textarea" placeholder="Tell us what happened..."></textarea>
+                    <textarea id="modal-message" name="message" class="form-textarea"
+                        placeholder="Tell us what happened..."></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">
                     <span>Get My Free Consultation</span>
                 </button>
 
-                <p class="form-disclaimer">By submitting, you agree to our Privacy Policy. Your information is secure and confidential.</p>
+                <p class="form-disclaimer">By submitting, you agree to our Privacy Policy. Your information is secure
+                    and confidential.</p>
             </form>
         </div>
     </div>
@@ -3013,4 +3944,5 @@
     <!-- AI Chatbot -->
     <script src="chatbot.js"></script>
 </body>
+
 </html>
