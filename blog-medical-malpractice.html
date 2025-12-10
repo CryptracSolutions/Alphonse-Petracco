@@ -1197,15 +1197,12 @@
             border-radius: 12px;
             overflow: hidden;
             position: relative;
-            background: linear-gradient(135deg, var(--charcoal-light) 0%, var(--charcoal) 100%);
         }
 
-        .article-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L80 40L40 80L0 40L40 0z' fill='%23D4AF37' fill-opacity='0.06'/%3E%3C/svg%3E");
-            background-size: 40px 40px;
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .article-image::after {
@@ -1213,27 +1210,6 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg, transparent 60%, rgba(10, 10, 10, 0.8) 100%);
-        }
-
-        .article-image-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .article-image-icon svg {
-            width: 36px;
-            height: 36px;
-            fill: var(--gold);
         }
 
         .article-image-caption {
@@ -3059,12 +3035,8 @@
                             lost, and statutes of limitations run quickly—<strong>time is critical.</strong></p>
 
                         <div class="article-image">
-                            <div class="article-image-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path
-                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                                </svg>
-                            </div>
+                            <img src="images/blog/hospital_corridor.png"
+                                alt="Hospital facility and healthcare environment" loading="lazy">
                             <p class="article-image-caption">Hospital facility and healthcare environment standards</p>
                         </div>
 
