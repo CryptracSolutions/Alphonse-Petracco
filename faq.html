@@ -121,6 +121,7 @@
             display: flex;
             flex-direction: column;
             transition: all 0.4s var(--ease-out-quart);
+            background: var(--black);
         }
 
         .nav-main {
@@ -2232,7 +2233,7 @@
             border-radius: 20px;
             padding: 2.5rem;
             max-width: 500px;
-            width: 100%;
+            width: min(500px, calc(100% - 2.5rem));
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
@@ -2313,6 +2314,9 @@
         @media (max-width: 768px) {
             .modal-card {
                 padding: 1.75rem;
+                border-radius: 16px;
+                width: min(500px, calc(100% - 2.5rem));
+                max-height: 85vh;
             }
 
             .modal-title {
@@ -3326,15 +3330,15 @@
 
                 <aside class="faq-form-wrapper">
                     <div class="faq-form-header">
-                        <h3>Get Your Free Consultation</h3>
-                        <p>Response within 24 hours</p>
-                    </div>
-                    <form action="#" method="post">
-                        <div class="form-group"><label class="form-label" for="fname">Full Name</label><input
-                                type="text" id="fname" name="name" class="form-input" placeholder="John Smith" required>
-                        </div>
-                        <div class="form-group"><label class="form-label" for="fphone">Phone</label><input type="tel"
-                                id="fphone" name="phone" class="form-input" placeholder="(973) 868-4343" required></div>
+                <h3>Get Your Free Consultation</h3>
+                <p>Response within 24 hours</p>
+            </div>
+            <form action="#" method="post" class="faq-inline-form">
+                <div class="form-group"><label class="form-label" for="fname">Full Name</label><input
+                        type="text" id="fname" name="name" class="form-input" placeholder="John Smith" required>
+                </div>
+                <div class="form-group"><label class="form-label" for="fphone">Phone</label><input type="tel"
+                        id="fphone" name="phone" class="form-input" placeholder="(973) 868-4343" required></div>
                         <div class="form-group"><label class="form-label" for="femail">Email</label><input type="email"
                                 id="femail" name="email" class="form-input" placeholder="john@example.com" required>
                         </div>
@@ -3369,7 +3373,7 @@
                 <h3>Get Your Free Consultation</h3>
                 <p>Response within 24 hours</p>
             </div>
-            <form action="#" method="post">
+            <form action="#" method="post" class="faq-inline-form">
                 <div class="form-group"><label class="form-label" for="mfname">Full Name</label><input type="text"
                         id="mfname" name="name" class="form-input" placeholder="John Smith" required></div>
                 <div class="form-group"><label class="form-label" for="mfphone">Phone</label><input type="tel"
@@ -4048,6 +4052,55 @@
                 });
             });
         })();
+    </script>
+
+    <script>
+        // Handle inline consultation forms (desktop sidebar + mobile card) with same behavior as modal
+        document.addEventListener('DOMContentLoaded', () => {
+            const INLINE_ENDPOINT = 'https://formspree.io/f/mdkqlqyw';
+            const inlineForms = document.querySelectorAll('.faq-inline-form');
+
+            inlineForms.forEach(form => {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const btn = form.querySelector('.form-submit');
+                    if (!btn) return;
+
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<span>Sending...</span>';
+                    btn.disabled = true;
+
+                    try {
+                        const response = await fetch(INLINE_ENDPOINT, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            btn.innerHTML = '<span>Thank You! We\'ll Be In Touch.</span>';
+                            btn.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+                            setTimeout(() => {
+                                form.reset();
+                                btn.innerHTML = originalText;
+                                btn.style.background = '';
+                                btn.disabled = false;
+                            }, 2500);
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        btn.innerHTML = '<span>Error - Please Try Again</span>';
+                        btn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style.background = '';
+                            btn.disabled = false;
+                        }, 3000);
+                    }
+                });
+            });
+        });
     </script>
 
     <!-- AI Chatbot -->
