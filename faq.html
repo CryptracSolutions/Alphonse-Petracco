@@ -1453,6 +1453,11 @@
             fill: var(--gold);
         }
 
+        /* Mobile-only consultation card (hidden by default) */
+        .faq-form-mobile {
+            display: none;
+        }
+
         /* CTA Banner */
         .cta-banner {
             padding: 5rem 0;
@@ -1855,6 +1860,17 @@
                 margin-bottom: 1rem;
             }
 
+            .faq-form-wrapper {
+                display: none;
+            }
+
+            .faq-form-wrapper.faq-form-mobile {
+                display: block;
+                position: static;
+                top: auto;
+                margin: 1.5rem 0 2rem;
+            }
+
             .cta-banner-actions {
                 flex-direction: column;
                 gap: 1.5rem;
@@ -1975,6 +1991,7 @@
                 font-size: 1.25rem;
             }
         }
+
 
         /* Form Styles */
         .form-group {
@@ -3342,6 +3359,41 @@
                         </svg>No fee unless we win</div>
                 </aside>
             </div>
+        </div>
+    </section>
+
+    <!-- Mobile-only consultation card placed after FAQs -->
+    <section class="faq-form-wrapper faq-form-mobile">
+        <div class="container">
+            <div class="faq-form-header">
+                <h3>Get Your Free Consultation</h3>
+                <p>Response within 24 hours</p>
+            </div>
+            <form action="#" method="post">
+                <div class="form-group"><label class="form-label" for="mfname">Full Name</label><input type="text"
+                        id="mfname" name="name" class="form-input" placeholder="John Smith" required></div>
+                <div class="form-group"><label class="form-label" for="mfphone">Phone</label><input type="tel"
+                        id="mfphone" name="phone" class="form-input" placeholder="(973) 868-4343" required></div>
+                <div class="form-group"><label class="form-label" for="mfemail">Email</label><input type="email"
+                        id="mfemail" name="email" class="form-input" placeholder="john@example.com" required></div>
+                <div class="form-group"><label class="form-label" for="mftype">Case Type</label><select id="mftype"
+                        name="case-type" class="form-select">
+                        <option value="">Select...</option>
+                        <option value="auto">Auto Accident</option>
+                        <option value="truck">Truck Accident</option>
+                        <option value="slip">Slip & Fall</option>
+                        <option value="medical">Medical Malpractice</option>
+                        <option value="work">Workplace Injury</option>
+                        <option value="other">Other</option>
+                    </select></div>
+                <div class="form-group"><label class="form-label" for="mfdesc">Brief Description</label><textarea
+                        id="mfdesc" name="description" class="form-textarea" placeholder="Tell us what happened..."
+                        rows="3"></textarea></div>
+                <button type="submit" class="btn btn-primary form-submit"><span>Get Free Case Review</span></button>
+            </form>
+            <div class="form-trust"><svg viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+                </svg>No fee unless we win</div>
         </div>
     </section>
 
