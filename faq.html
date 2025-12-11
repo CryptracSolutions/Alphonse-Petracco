@@ -3369,16 +3369,58 @@
                         <div class="form-group"><label class="form-label" for="femail">Email</label><input type="email"
                                 id="femail" name="email" class="form-input" placeholder="john@example.com" required>
                         </div>
-                        <div class="form-group"><label class="form-label" for="ftype">Case Type</label><select
-                                id="ftype" name="case-type" class="form-select">
-                                <option value="">Select...</option>
-                                <option value="auto">Auto Accident</option>
-                                <option value="truck">Truck Accident</option>
-                                <option value="slip">Slip & Fall</option>
-                                <option value="medical">Medical Malpractice</option>
-                                <option value="work">Workplace Injury</option>
-                                <option value="other">Other</option>
-                            </select></div>
+                        <div class="form-group"><label class="form-label" for="ftype">Case Type</label>
+                            <div class="custom-select" data-placeholder="Select...">
+                                <select id="ftype" name="case-type" class="form-select">
+                                    <option value="">Select...</option>
+                                    <option value="auto">Auto Accident</option>
+                                    <option value="truck">Truck Accident</option>
+                                    <option value="motorcycle">Motorcycle Accident</option>
+                                    <option value="workplace">Workplace Injury</option>
+                                    <option value="medical">Medical Malpractice</option>
+                                    <option value="premises">Slip & Fall / Premises</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="custom-select-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false">
+                                    <span class="placeholder">Select...</span>
+                                    <div class="custom-select-arrow">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="custom-select-options" role="listbox">
+                                    <div class="custom-select-option" data-value="auto" role="option">
+                                        <span>Auto Accident</span>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                                    </div>
+                                    <div class="custom-select-option" data-value="truck" role="option">
+                                        <span>Truck Accident</span>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                                    </div>
+                                    <div class="custom-select-option" data-value="motorcycle" role="option">
+                                        <span>Motorcycle Accident</span>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                                    </div>
+                                    <div class="custom-select-option" data-value="workplace" role="option">
+                                        <span>Workplace Injury</span>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                                    </div>
+                                    <div class="custom-select-option" data-value="medical" role="option">
+                                        <span>Medical Malpractice</span>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                                    </div>
+                                    <div class="custom-select-option" data-value="premises" role="option">
+                                        <span>Slip & Fall / Premises</span>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                                    </div>
+                                    <div class="custom-select-option" data-value="other" role="option">
+                                        <span>Other</span>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group"><label class="form-label" for="fdesc">Brief Description</label><textarea
                                 id="fdesc" name="description" class="form-textarea"
                                 placeholder="Tell us what happened..." rows="3"></textarea></div>
@@ -3407,16 +3449,58 @@
                         id="mfphone" name="phone" class="form-input" placeholder="(973) 868-4343" required></div>
                 <div class="form-group"><label class="form-label" for="mfemail">Email</label><input type="email"
                         id="mfemail" name="email" class="form-input" placeholder="john@example.com" required></div>
-                <div class="form-group"><label class="form-label" for="mftype">Case Type</label><select id="mftype"
-                        name="case-type" class="form-select">
-                        <option value="">Select...</option>
-                        <option value="auto">Auto Accident</option>
-                        <option value="truck">Truck Accident</option>
-                        <option value="slip">Slip & Fall</option>
-                        <option value="medical">Medical Malpractice</option>
-                        <option value="work">Workplace Injury</option>
-                        <option value="other">Other</option>
-                    </select></div>
+                <div class="form-group"><label class="form-label" for="mftype">Case Type</label>
+                    <div class="custom-select" data-placeholder="Select...">
+                        <select id="mftype" name="case-type" class="form-select">
+                            <option value="">Select...</option>
+                            <option value="auto">Auto Accident</option>
+                            <option value="truck">Truck Accident</option>
+                            <option value="motorcycle">Motorcycle Accident</option>
+                            <option value="workplace">Workplace Injury</option>
+                            <option value="medical">Medical Malpractice</option>
+                            <option value="premises">Slip & Fall / Premises</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="custom-select-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="placeholder">Select...</span>
+                            <div class="custom-select-arrow">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10l5 5 5-5z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="custom-select-options" role="listbox">
+                            <div class="custom-select-option" data-value="auto" role="option">
+                                <span>Auto Accident</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="truck" role="option">
+                                <span>Truck Accident</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="motorcycle" role="option">
+                                <span>Motorcycle Accident</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="workplace" role="option">
+                                <span>Workplace Injury</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="medical" role="option">
+                                <span>Medical Malpractice</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="premises" role="option">
+                                <span>Slip & Fall / Premises</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                            </div>
+                            <div class="custom-select-option" data-value="other" role="option">
+                                <span>Other</span>
+                                <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group"><label class="form-label" for="mfdesc">Brief Description</label><textarea
                         id="mfdesc" name="description" class="form-textarea" placeholder="Tell us what happened..."
                         rows="3"></textarea></div>
