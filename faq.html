@@ -1813,33 +1813,24 @@
             }
 
             .category-nav {
-                display: flex;
-                overflow-x: auto;
-                overflow-y: visible;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
                 gap: 0.5rem;
-                padding: 0.5rem 0;
+                padding: 0;
                 background: transparent;
                 border: none;
                 border-radius: 0;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-            }
-
-            .category-nav::-webkit-scrollbar {
-                display: none;
             }
 
             .category-btn {
-                flex-shrink: 0;
-                width: auto;
+                width: 100%;
                 padding: 0.75rem 1rem;
-                border-radius: 999px;
+                border-radius: 12px;
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 font-size: 0.85rem;
                 text-align: center;
                 -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3);
-                touch-action: manipulation;
+                touch-action: pan-y;
             }
 
             .category-btn.active {
